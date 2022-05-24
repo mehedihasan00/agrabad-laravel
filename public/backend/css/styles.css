@@ -11957,6 +11957,7 @@ body {
 
 /* ck editor */
 .ck-editor__editable {
-  max-height: 100px;
+  /* max-height: 100px; */
+  min-height: 100px;
   overflow-y: scroll;
 }

@@ -52,7 +52,7 @@ var loadFile3 = function(event) {
 };
 
 ClassicEditor
-.create( document.querySelector( '#aboutCompany' ) )
+.create( document.querySelector( '#ckdescription') )
 .catch( error => {
     console.error( error );
 } );

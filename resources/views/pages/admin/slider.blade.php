@@ -14,12 +14,6 @@
                 @endphp
         <div class="col-12 col-lg-5 mb-md-3">
             <form action="{{ url('slider/insert') }}" method="POST" enctype="multipart/form-data">
-                @if(Session::get('success'))
-                    <div class="alert alert-success alert-dismissible fade show" role="alert">
-                        {{ Session::get('success') }}
-                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-                    </div>
-                @endif
                 @csrf
                 <div class="card">
                     <div class="card-header card-mod-back">
