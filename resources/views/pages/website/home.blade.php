@@ -559,28 +559,28 @@
                         <div>
                             <div class="col-12">
                                 <div class="spnsors-logo">
-                                    <a href="#"><img class="img-fluid" src="{{ asset('img/sponsors/gold-1.png') }}" alt=""></a>
+                                    <img class="img-fluid" src="{{ asset('img/sponsors/gold-1.png') }}" alt="">
                                 </div>
                             </div>
                         </div>
                         <div>
                             <div class="col-12">
                                 <div class="spnsors-logo">
-                                    <a href="#"><img class="img-fluid" src="{{ asset('img/sponsors/gold-2.png') }}" alt=""></a>
+                                    <img class="img-fluid" src="{{ asset('img/sponsors/gold-2.png') }}" alt="">
                                 </div>
                             </div>
                         </div>
                         <div>
                             <div class="col-12">
                                 <div class="spnsors-logo">
-                                    <a href="#"><img class="img-fluid" src="{{ asset('img/sponsors/gold-3.png') }}" alt=""></a>
+                                    <img class="img-fluid" src="{{ asset('img/sponsors/gold-3.png') }}" alt="">
                                 </div>
                             </div>
                         </div>
                         <div>
                             <div class="col-12">
                                 <div class="spnsors-logo">
-                                    <a href="#"><img class="img-fluid" src="{{ asset('img/sponsors/gold-4.png') }}" alt=""></a>
+                                    <img class="img-fluid" src="{{ asset('img/sponsors/gold-4.png') }}" alt="">
                                 </div>
                             </div>
                         </div>

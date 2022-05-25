@@ -6,6 +6,9 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\SliderController;
 use App\Http\Controllers\ServiceController;
 use App\Http\Controllers\TeamController;
+use App\Http\Controllers\GalleryController;
+use App\Http\Controllers\VideoController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -45,8 +48,20 @@ Route::get('service/delete/{id}', [ServiceController::class, 'serviceDelete']);
 // Team Route
 Route::post('team/insert', [TeamController::class, 'teamInsert'])->name('store.team');
 Route::get('team/edit/{id}', [TeamController::class, 'teamEdit'])->name('edit.team');
-Route::post('team/update/{id}', [TeamController::class, 'teamUpdate']);
+Route::post('team/update/{id}', [TeamController::class, 'teamUpdate'])->name('update.team');
 Route::get('team/delete/{id}', [TeamController::class, 'teamDelete']);
+// Gallery Route
+Route::post('gallery/insert', [GalleryController::class, 'galleryInsert'])->name('store.gallery');
+Route::get('gallery/edit/{id}', [GalleryController::class, 'galleryEdit'])->name('edit.gallery');
+Route::post('gallery/update/{id}', [GalleryController::class, 'galleryUpdate'])->name('update.gallery');
+Route::get('gallery/delete/{id}', [GalleryController::class, 'galleryDelete']);
+// Video Route
+Route::post('video/insert', [VideoController::class, 'videoInsert'])->name('store.video');
+Route::get('video/edit/{id}', [VideoController::class, 'videoEdit'])->name('edit.video');
+Route::post('video/update/{id}', [VideoController::class, 'videoUpdate'])->name('update.video');
+Route::get('video/delete/{id}', [VideoController::class, 'videoDelete'])->name('delete.video');
+
+
 
 Route::middleware([ 'auth:sanctum', config('jetstream.auth_session'), 'verified' ])->group(function () {
     Route::get('/dashboard', function () { return view('dashboard'); })->name('dashboard');
@@ -54,4 +69,6 @@ Route::middleware([ 'auth:sanctum', config('jetstream.auth_session'), 'verified'
     Route::get('/admin/slider', [SliderController::class, 'slider']);
     Route::get('/admin/service', [ServiceController::class, 'service']);
     Route::get('/admin/team', [TeamController::class, 'team']);
+    Route::get('/admin/gallery', [GalleryController::class, 'gallery']);
+    Route::get('/admin/video', [VideoController::class, 'video']);
 });

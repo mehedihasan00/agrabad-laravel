@@ -113,7 +113,7 @@
                                     </td>
                                     <td class="d-flex gap-1">
                                         <a href="{{ url('slider/edit/'. $slider->id) }}" type="submit" class="d-inline btn btn-primary btn-sm b-btn"><i class="fas fa-user-edit"></i></button>
-                                        <a href="{{ url('slider/delete/'.$slider->id) }}" type="submit" class="d-inline btn btn-danger btn-sm b-btn" onclick="confirmDel()"><i class="fas fa-trash"></i></button>
+                                        <a href="{{ url('slider/delete/'.$slider->id) }}" type="submit" class="d-inline btn btn-danger btn-sm b-btn" onclick="return confirmDel()"><i class="fas fa-trash"></i></button>
                                     </td>
                                 </tr>
                                 @endforeach

@@ -26,7 +26,7 @@ window.addEventListener('DOMContentLoaded', event => {
 });
 
 var loadFile = function(event) {
-    var output1 = document.getElementById('output1');
+    var output1 = document.getElementById('output');
     output1.src = URL.createObjectURL(event.target.files[0]);
     output1.onload = function() {
       URL.revokeObjectURL(output1.src) // free memory
@@ -34,22 +34,22 @@ var loadFile = function(event) {
     }
 };
 
-var loadFile2 = function(event) {
-    var output2 = document.getElementById('output2');
-    output2.src = URL.createObjectURL(event.target.files[0]);
-    output2.onload = function() {
-      URL.revokeObjectURL(output2.src) // free memory
-      output2.style.display = 'inline';
-    }
-};
-var loadFile3 = function(event) {
-    var output3 = document.getElementById('output3');
-    output3.src = URL.createObjectURL(event.target.files[0]);
-    output3.onload = function() {
-      URL.revokeObjectURL(output3.src) // free memory
-      output3.style.display = 'inline';
-    }
-};
+// var loadFile2 = function(event) {
+//     var output2 = document.getElementById('output2');
+//     output2.src = URL.createObjectURL(event.target.files[0]);
+//     output2.onload = function() {
+//       URL.revokeObjectURL(output2.src) // free memory
+//       output2.style.display = 'inline';
+//     }
+// };
+// var loadFile3 = function(event) {
+//     var output3 = document.getElementById('output3');
+//     output3.src = URL.createObjectURL(event.target.files[0]);
+//     output3.onload = function() {
+//       URL.revokeObjectURL(output3.src) // free memory
+//       output3.style.display = 'inline';
+//     }
+// };
 
 ClassicEditor
 .create( document.querySelector( '#ckdescription') )
@@ -62,3 +62,6 @@ ClassicEditor
 .catch( error => {
     console.error( error );
 });
+function confirmDel() {
+    return confirm("Are you sure you want to delete?");
+ }

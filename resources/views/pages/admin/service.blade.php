@@ -43,7 +43,7 @@
             <div class="slider-list">
                 <div class="card mb-4">
                     <div class="card-header card-mod-msg">
-                        <h5 class="add-slider">All Customer Messages</h4>
+                        <h5 class="add-slider">Our Services list</h4>
                     </div>
                     <div class="card-body data-message">
                         <table id="datatablesSimple">

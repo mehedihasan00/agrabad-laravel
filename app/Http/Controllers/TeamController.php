@@ -20,7 +20,7 @@ class TeamController extends Controller
             'fb_link' => 'required',
             'twitter_link' => 'required',
             'instagram_link' => 'required',
-            'image' => 'required|mimes:jpeg,jpg,png,gif',
+            'image' => 'required|Image|mimes:jpeg,jpg,png,gif',
         ]);
 
         $image = $request->file('image');
@@ -48,21 +48,6 @@ class TeamController extends Controller
 		    return ["error" => $e->getMessage()];
             // return redirect()->back()->with('error', 'Team insert failed!');
         }
-
-
-        // $team = Team::insert();
-        // Team::insert([
-        //     "name" => $request->name,
-        //     "designation" => $request->designation,
-        //     "fb_link" => $request->facebook,
-        //     "twitter_link" => $request->twitter,
-        //     "instagram_link" => $request->instagram,
-        //     "linkedin_link" => $request->linkedin,
-        //     "image" => $imgName,
-        //     'created_at' => Carbon::now()
-        // ]);
-        // return Redirect()->back()->with('success', 'User inserted!');
-        //return $request;
     }
     public function teamEdit($id) {
         $team = Team::find($id);
@@ -70,37 +55,43 @@ class TeamController extends Controller
     }
     public function teamUpdate(Request $request, $id) {
         $validatedData = $request->validate([
-            'name' => 'min:4',
-            'designation' => 'min:4',
-            'facebook' => 'min:4',
-            'twitter' => 'min:4',
-            'instagram' => 'min:4',
-            'linkedin' => 'min:4',
+            'name' => 'required|min:4',
+            'designation' => 'required|min:4',
+            'fb_link' => 'required',
+            'twitter_link' => 'required',
+            'instagram_link' => 'required',
         ]);
 
-        $team = Team::find($id);
-        $team->name = $request->name;
-        $team->designation = $request->designation;
-        $team->fb_link = $request->facebook;
-        $team->twitter_link = $request->twitter;
-        $team->instagram_link = $request->instagram;
-        $team->linkedin_link = $request->linkedin;
-        
-        $image = $request->file('image');
-        if($image) {
-            $imageName = date('YmdHi').$image->getClientOriginalName();
-            $image->move('img/team', $imageName);
-            if(file_exists('img/team/'. $team->image) && !empty($team->image)) {
-                unlink('img/team/' . $team->image);
+        try {
+            DB::beginTransaction();
+            $team = Team::find($id);
+            $team->name = $request->name;
+            $team->designation = $request->designation;
+            $team->fb_link = $request->fb_link;
+            $team->twitter_link = $request->twitter_link;
+            $team->instagram_link = $request->instagram_link;
+
+            $image = $request->file('image');
+            if($image) {
+                $imageName = date('YmdHi').$image->getClientOriginalName();
+                $image->move('img/team', $imageName);
+                if(file_exists('img/team/'. $team->image) && !empty($team->image)) {
+                    unlink('img/team/' . $team->image);
+                }
+                $team['image'] = $imageName;
             }
-            $team['image'] = $imageName;
+            $team->save();
+            DB::commit();
+            return redirect()->back()->with('success', 'Team Updated!');
+        } catch (\Exception $e) {
+            DB::rollback();           
+		    return ["error" => $e->getMessage()];
+            // return redirect()->back()->with('error', 'Team insert failed!');
         }
-        $team->save();
-        return Redirect()->back()->with("success", "Update Successfull");
     }
     public function teamDelete($id) {
         $team = Team::find($id);
-        if(file_exists('img/team/'.$team->image) AND !empty($team->image)){
+        if(file_exists('img/team/'.$team->image) AND !empty($team->image)) {
             unlink('img/team/'.$team->image);
         }
         $team->delete();

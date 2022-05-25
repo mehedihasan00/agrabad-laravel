@@ -32,10 +32,11 @@
                         <a class="nav-link" href="{{ url('/admin/slider') }}">Slider</a>
                         <a class="nav-link" href="{{ url('/admin/service') }}">Services</a>
                         <a class="nav-link" href="{{ url('/admin/team') }}">Our Team</a>
+                        <a class="nav-link" href="{{ url('/admin/gallery') }}">Gallery</a>
+                        <a class="nav-link" href="{{ url('/admin/video') }}">Video</a>
                         <a class="nav-link" href="{{ url('/admin/category') }}">Category</a>
                         <a class="nav-link" href="{{ url('/admin/product') }}">Product</a>
                         <a class="nav-link" href="{{ url('/admin/client') }}">Clients</a>
-                        <a class="nav-link" href="{{ url('/admin/gallery') }}">Gallery</a>
                     </nav>
                 </div>
                 <a class="nav-link" href="{{ url('admin/users')}}">
