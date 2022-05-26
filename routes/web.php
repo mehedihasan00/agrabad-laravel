@@ -8,6 +8,7 @@ use App\Http\Controllers\ServiceController;
 use App\Http\Controllers\TeamController;
 use App\Http\Controllers\GalleryController;
 use App\Http\Controllers\VideoController;
+use App\Http\Controllers\SettingController;
 
 
 /*
@@ -60,7 +61,8 @@ Route::post('video/insert', [VideoController::class, 'videoInsert'])->name('stor
 Route::get('video/edit/{id}', [VideoController::class, 'videoEdit'])->name('edit.video');
 Route::post('video/update/{id}', [VideoController::class, 'videoUpdate'])->name('update.video');
 Route::get('video/delete/{id}', [VideoController::class, 'videoDelete'])->name('delete.video');
-
+// Setting
+Route::post('/setting/update/', [SettingController::class, 'settingUpdate'])->name('setting.update');
 
 
 Route::middleware([ 'auth:sanctum', config('jetstream.auth_session'), 'verified' ])->group(function () {
@@ -71,4 +73,5 @@ Route::middleware([ 'auth:sanctum', config('jetstream.auth_session'), 'verified'
     Route::get('/admin/team', [TeamController::class, 'team']);
     Route::get('/admin/gallery', [GalleryController::class, 'gallery']);
     Route::get('/admin/video', [VideoController::class, 'video']);
+    Route::get('/admin/setting', [SettingController::class, 'setting']);
 });

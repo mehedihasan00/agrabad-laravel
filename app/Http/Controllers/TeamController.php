@@ -10,6 +10,7 @@ class TeamController extends Controller
 {
     public function team() {
         $teams = Team::latest()->paginate(5);
+        // $teams = Team::orderBy('id', 'desc')->limit('5')->get();
         return view('pages.admin.team', compact('teams'));
     }
     public function teamInsert(Request $request) {

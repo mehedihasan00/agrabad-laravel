@@ -7,7 +7,7 @@
         <li class="breadcrumb-item active">Update Service</li>
     </ol>
     <div class="row">
-        <div class="col-12 col-lg-7 mb-md-3">
+        <div class="col-12 col-lg-6 offset-lg-3 mb-md-3">
             <form action="{{ url('service/update/'.$service->id) }}" method="POST" enctype="multipart/form-data">
                 @csrf
                 <div class="card">

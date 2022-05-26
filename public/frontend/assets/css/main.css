@@ -1422,13 +1422,15 @@ a.back-to-top:hover, a.back-to-top:focus {
 }
 #gallery .item-view  i {
   font-size: 19px;
-  margin-top: 9px;
-  margin-left: 3px;
+  margin-top: 8px;
+  margin-left: 2px;
+  font-weight: 400;
 }
 #gallery-detail .item-view i {
   font-size: 19px;
-  margin-top: 9px;
+  margin-top: 8px;
   margin-left: 9px;
+  font-weight: 400;
 }
 #gallery .image-black-cover::before, #gallery-detail .image-black-cover::before {
   position: absolute;

@@ -25,26 +25,36 @@
                             <input type="text" name="designation" class="form-control form-control-sm" id="designation" aria-describedby="designation" placeholder="Enter Full Designation">
                             <span class="text-danger">@error('designation') {{ $message }} @enderror</span>
                         </div>
-                        <div class="mb-3">
-                            <label for="facebook" class="form-label"><strong>Facebook Link</strong></label>
-                            <input type="url" name="fb_link" class="form-control form-control-sm" id="facebook" aria-describedby="facebook" placeholder="https://facebook.com/profile">
-                            <span class="text-danger">@error('facebook') {{ $message }} @enderror</span>
-                        </div>
-                        <div class="mb-3">
-                            <label for="twitter" class="form-label"><strong>Twitter Link</strong></label>
-                            <input type="url" name="twitter_link" class="form-control form-control-sm" id="twitter" aria-describedby="twitter" placeholder="https://twitter.com/profile">
-                            <span class="text-danger">@error('twitter') {{ $message }} @enderror</span>
-                        </div>
-                        <div class="mb-3">
-                            <label for="instagram" class="form-label"><strong>Instagram Link</strong></label>
-                            <input type="url" name="instagram_link" class="form-control form-control-sm" id="instagram" aria-describedby="instagram" placeholder="https://instagram.com/profile">
-                            <span class="text-danger">@error('instagram') {{ $message }} @enderror</span>
-                        </div>
-                        <div class="mb-3">
-                            <label for="image" class="form-label"><strong>Profile Photo</strong></label>
-                            <input type="file" name="image" class="form-control form-control-sm" id="image" aria-describedby="image" accept="image/*" onchange="loadFile(event)">
-                            <span class="text-danger">@error('image') {{ $message }} @enderror</span>
-                            <img id="output1" style="display:none; max-width: 140px; max-height: 120px; padding-top: 0.5rem"/>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="mb-3">
+                                    <label for="facebook" class="form-label"><strong>Facebook Link</strong></label>
+                                    <input type="url" name="fb_link" class="form-control form-control-sm" id="facebook" aria-describedby="facebook" placeholder="https://facebook.com/profile">
+                                    <span class="text-danger">@error('facebook') {{ $message }} @enderror</span>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="mb-3">
+                                    <label for="twitter" class="form-label"><strong>Twitter Link</strong></label>
+                                    <input type="url" name="twitter_link" class="form-control form-control-sm" id="twitter" aria-describedby="twitter" placeholder="https://twitter.com/profile">
+                                    <span class="text-danger">@error('twitter') {{ $message }} @enderror</span>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="mb-3">
+                                    <label for="instagram" class="form-label"><strong>Instagram Link</strong></label>
+                                    <input type="url" name="instagram_link" class="form-control form-control-sm" id="instagram" aria-describedby="instagram" placeholder="https://instagram.com/profile">
+                                    <span class="text-danger">@error('instagram') {{ $message }} @enderror</span>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="mb-3">
+                                    <label for="image" class="form-label"><strong>Profile Photo</strong></label>
+                                    <input type="file" name="image" class="form-control form-control-sm" id="image" aria-describedby="image" accept="image/*" onchange="loadFile(event)">
+                                    <span class="text-danger">@error('image') {{ $message }} @enderror</span>
+                                    <img id="output1" style="display:none; max-width: 140px; max-height: 120px; padding-top: 0.5rem"/>
+                                </div>
+                            </div>
                         </div>
                         <hr style="margin-top: 0.5rem; margin-bottom: 0.3rem; opacity: 0.1">
                         <div class="col-12 d-flex justify-content-end">

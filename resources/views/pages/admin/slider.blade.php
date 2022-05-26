@@ -30,30 +30,40 @@
                             <input type="text" name="caption" class="form-control form-control-sm" id="caption" aria-describedby="caption" placeholder="Please Enter Some Text">
                             <span class="text-danger">@error('caption') {{ $message }} @enderror</span>
                         </div>
-                        <div class="mb-3">
-                            <label for="linkTitle" class="form-label"><strong>Link Title</strong></label>
-                            <input type="text" name="link_title" class="form-control form-control-sm" id="linkTitle" aria-describedby="linkTitle" placeholder="Please Enter link title for button">
-                            <span class="text-danger">@error('link_title') {{ $message }} @enderror</span>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="mb-3">
+                                    <label for="linkTitle" class="form-label"><strong>Link Title</strong></label>
+                                    <input type="text" name="link_title" class="form-control form-control-sm" id="linkTitle" aria-describedby="linkTitle" placeholder="Please Enter link title for button">
+                                    <span class="text-danger">@error('link_title') {{ $message }} @enderror</span>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="mb-3">
+                                    <label for="linkUrl" class="form-label"><strong>Url Link</strong></label>
+                                    <input type="url" name="link_url" class="form-control form-control-sm" id="linkUrl" aria-describedby="linkUrl" placeholder="Please Enter a Url for button">
+                                    <span class="text-danger">@error('link_url') {{ $message }} @enderror</span>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="mb-3">
+                                    <label for="status" class="form-label"><strong>Status</strong></label>
+                                    <select name="status" class="form-select form-select-sm" aria-label="Default select status" id="status">
+                                        <option value="1">On</option>
+                                        <option value="0">off</option>
+                                    </select>
+                                    <span class="text-danger">@error('status') {{ $message }} @enderror</span>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="mb-3">
+                                    <label for="image" class="form-label"><strong>Image</strong></label>
+                                    <input type="file" name="image" class="form-control form-control-sm" id="image" aria-describedby="image" accept="image/*" onchange="loadFile(event)">
+                                    <span class="text-danger">@error('image') {{ $message }} @enderror</span>
+                                    <img id="output1" style="display:none; max-width: 140px; max-height: 120px; padding-top: 0.5rem"/>
+                                </div>  
+                            </div>
                         </div>
-                        <div class="mb-3">
-                            <label for="linkUrl" class="form-label"><strong>Url Link</strong></label>
-                            <input type="url" name="link_url" class="form-control form-control-sm" id="linkUrl" aria-describedby="linkUrl" placeholder="Please Enter a Url for button">
-                            <span class="text-danger">@error('link_url') {{ $message }} @enderror</span>
-                        </div>
-                        <div class="mb-3">
-                            <label for="status" class="form-label"><strong>Status</strong></label>
-                            <select name="status" class="form-select form-select-sm" aria-label="Default select status" id="status">
-                                <option value="1">On</option>
-                                <option value="0">off</option>
-                            </select>
-                            <span class="text-danger">@error('status') {{ $message }} @enderror</span>
-                        </div>
-                        <div class="mb-3">
-                            <label for="image" class="form-label"><strong>Image</strong></label>
-                            <input type="file" name="image" class="form-control form-control-sm" id="image" aria-describedby="image" accept="image/*" onchange="loadFile(event)">
-                            <span class="text-danger">@error('image') {{ $message }} @enderror</span>
-                            <img id="output1" style="display:none; max-width: 140px; max-height: 120px; padding-top: 0.5rem"/>
-                        </div>  
                         <hr style="margin-top: 0.5rem; margin-bottom: 0.3rem; opacity: 0.1">
                         <div class="col-12 d-flex justify-content-end">
                             <button type="submit" class="btn btn-mod-content-submit btn-sm">Add Slider+</button>
