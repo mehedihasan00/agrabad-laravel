@@ -5,6 +5,8 @@ use Illuminate\Support\Carbon;
 use Illuminate\Http\Request;
 use App\Models\Slider;
 use DB;
+use Image;
+
 
 class sliderController extends Controller
 {
@@ -27,7 +29,9 @@ class sliderController extends Controller
         $imgExt = strtolower($image->getClientOriginalExtension());
         $imgName = $nameGen. '.' . $imgExt;
         $upLocation = 'img/slider/';
-        $image->move($upLocation, $imgName);
+        // $image->move($upLocation, $imgName);
+        Image::make($image)->resize(1920,1024)->save($upLocation . $imgName);
+
 
         try {
             DB::beginTransaction();
@@ -47,18 +51,6 @@ class sliderController extends Controller
 		    // return ["error" => $e->getMessage()];
             return redirect()->back()->with('failed', 'Slider insert failded!');
         }
-        // Slider::insert([
-        //     'image' => $imgName,
-        //     'title' => $request->title,
-        //     'caption' => $request->caption,
-        //     'link_title' => $request->link_title,
-        //     'link_url' => $request->link_url,
-        //     'status' => $request->status,
-        //     'created_at' => Carbon::now()
-        // ]);
-        
-        // return Redirect()->back()->with('success', 'Slider inserted!');
-        // return $request;
     }
     public function sliderEdit($id) {
         $slider = Slider::find($id);
@@ -82,13 +74,18 @@ class sliderController extends Controller
             $slider->status = $request->status;
 
             $image = $request->file('image');
-            if($image){
-                $imageName = date('YmdHi').$image->getClientOriginalName();
-                $image->move('img/slider/', $imageName);
+            if($image) {
+                // $imageName = date('YmdHi').$image->getClientOriginalName();
+                // $image->move('img/slider/', $imageName);
+                $nameGen = hexdec(uniqid());
+                $imgExt = strtolower($image->getClientOriginalExtension());
+                $imgName = $nameGen. '.' . $imgExt;
+                $upLocation = 'img/slider/';
+                Image::make($image)->resize(1920,1024)->save($upLocation . $imgName);
                 if(file_exists('img/slider/'.$slider->image) AND !empty($slider->image)){
                     unlink('img/slider/'.$slider->image);
                 }
-                $slider['image'] = $imageName;
+                $slider['image'] = $imgName;
             }
             $slider->save();
             DB::commit();
@@ -96,7 +93,7 @@ class sliderController extends Controller
         } catch (\Exception $e) {
             DB::rollback();           
 		    // return ["error" => $e->getMessage()];
-            return redirect()->back()->with('error', 'Slider update failed!');
+            // return redirect()->back()->with('error', 'Slider update failed!');
         }
     }
     public function sliderDelete($id) {

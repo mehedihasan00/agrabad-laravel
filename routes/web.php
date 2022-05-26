@@ -9,6 +9,7 @@ use App\Http\Controllers\TeamController;
 use App\Http\Controllers\GalleryController;
 use App\Http\Controllers\VideoController;
 use App\Http\Controllers\SettingController;
+use App\Http\Controllers\ClientController;
 
 
 /*
@@ -39,30 +40,35 @@ Route::get('/videoGallery', [WebController::class, 'videoGallery'])->name('video
 // slider route
 Route::post('slider/insert', [SliderController::class, 'sliderInsert'])->name('store.slider');
 Route::get('slider/edit/{id}', [SliderController::class, 'sliderEdit'])->name('edit.slider');
-Route::post('slider/update/{id}', [SliderController::class, 'sliderUpdate']);
-Route::get('slider/delete/{id}', [SliderController::class, 'sliderDelete']);
+Route::post('slider/update/{id}', [SliderController::class, 'sliderUpdate'])->name('update.slider');
+Route::get('slider/delete/{id}', [SliderController::class, 'sliderDelete'])->name('delete.slider');
 // Services Route
 Route::post('service/insert', [ServiceController::class, 'serviceInsert'])->name('store.service');
 Route::get('service/edit/{id}', [ServiceController::class, 'serviceEdit'])->name('edit.service');
-Route::post('service/update/{id}', [ServiceController::class, 'serviceUpdate']);
-Route::get('service/delete/{id}', [ServiceController::class, 'serviceDelete']);
+Route::post('service/update/{id}', [ServiceController::class, 'serviceUpdate'])->name('update.service');
+Route::get('service/delete/{id}', [ServiceController::class, 'serviceDelete'])->name('delete.service');
 // Team Route
 Route::post('team/insert', [TeamController::class, 'teamInsert'])->name('store.team');
 Route::get('team/edit/{id}', [TeamController::class, 'teamEdit'])->name('edit.team');
 Route::post('team/update/{id}', [TeamController::class, 'teamUpdate'])->name('update.team');
-Route::get('team/delete/{id}', [TeamController::class, 'teamDelete']);
+Route::get('team/delete/{id}', [TeamController::class, 'teamDelete'])->name('delete.team');
 // Gallery Route
 Route::post('gallery/insert', [GalleryController::class, 'galleryInsert'])->name('store.gallery');
 Route::get('gallery/edit/{id}', [GalleryController::class, 'galleryEdit'])->name('edit.gallery');
 Route::post('gallery/update/{id}', [GalleryController::class, 'galleryUpdate'])->name('update.gallery');
-Route::get('gallery/delete/{id}', [GalleryController::class, 'galleryDelete']);
+Route::get('gallery/delete/{id}', [GalleryController::class, 'galleryDelete'])->name('delete.gallery');
 // Video Route
 Route::post('video/insert', [VideoController::class, 'videoInsert'])->name('store.video');
 Route::get('video/edit/{id}', [VideoController::class, 'videoEdit'])->name('edit.video');
 Route::post('video/update/{id}', [VideoController::class, 'videoUpdate'])->name('update.video');
 Route::get('video/delete/{id}', [VideoController::class, 'videoDelete'])->name('delete.video');
+// Client Route
+Route::post('client/insert', [ClientController::class, 'clientInsert'])->name('store.client');
+Route::get('client/edit/{id}', [ClientController::class, 'clientEdit'])->name('edit.client');
+Route::post('client/update/{id}', [ClientController::class, 'clientUpdate'])->name('update.client');
+Route::get('client/delete/{id}', [ClientController::class, 'clientDelete'])->name('delete.client');
 // Setting
-Route::post('/setting/update/', [SettingController::class, 'settingUpdate'])->name('setting.update');
+Route::post('/setting/update/{id}', [SettingController::class, 'settingUpdate'])->name('setting.update');
 
 
 Route::middleware([ 'auth:sanctum', config('jetstream.auth_session'), 'verified' ])->group(function () {
@@ -74,4 +80,5 @@ Route::middleware([ 'auth:sanctum', config('jetstream.auth_session'), 'verified'
     Route::get('/admin/gallery', [GalleryController::class, 'gallery']);
     Route::get('/admin/video', [VideoController::class, 'video']);
     Route::get('/admin/setting', [SettingController::class, 'setting']);
+    Route::get('/admin/client', [ClientController::class, 'client']);
 });

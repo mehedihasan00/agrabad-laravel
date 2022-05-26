@@ -559,28 +559,42 @@
                         <div>
                             <div class="col-12">
                                 <div class="spnsors-logo">
-                                    <img class="img-fluid" src="{{ asset('img/sponsors/gold-1.png') }}" alt="">
+                                    <img class="img-fluid" src="{{ asset('img/client/gold-1.png') }}" alt="">
                                 </div>
                             </div>
                         </div>
                         <div>
                             <div class="col-12">
                                 <div class="spnsors-logo">
-                                    <img class="img-fluid" src="{{ asset('img/sponsors/gold-2.png') }}" alt="">
+                                    <img class="img-fluid" src="{{ asset('img/client/gold-2.png') }}" alt="">
                                 </div>
                             </div>
                         </div>
                         <div>
                             <div class="col-12">
                                 <div class="spnsors-logo">
-                                    <img class="img-fluid" src="{{ asset('img/sponsors/gold-3.png') }}" alt="">
+                                    <img class="img-fluid" src="{{ asset('img/client/gold-3.png') }}" alt="">
                                 </div>
                             </div>
                         </div>
                         <div>
                             <div class="col-12">
                                 <div class="spnsors-logo">
-                                    <img class="img-fluid" src="{{ asset('img/sponsors/gold-4.png') }}" alt="">
+                                    <img class="img-fluid" src="{{ asset('img/client/gold-4.png') }}" alt="">
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="col-12">
+                                <div class="spnsors-logo">
+                                    <img class="img-fluid" src="{{ asset('img/client/1733895055252016.jpg') }}" alt="">
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="col-12">
+                                <div class="spnsors-logo">
+                                    <img class="img-fluid" src="{{ asset('img/client/1733895143051514.jpg') }}" alt="">
                                 </div>
                             </div>
                         </div>

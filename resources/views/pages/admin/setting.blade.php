@@ -7,7 +7,7 @@
     </ol>
     <div class="row">
         <div class="col-12 col-md-12">
-            <form action="{{ route('setting.update') }}" method="POST" enctype="multipart/form-data">
+            <form action="{{ route('setting.update', $setting->id) }}" method="POST" enctype="multipart/form-data">
                 @csrf
                 <input type="hidden" name="">
                 <div class="card">
@@ -19,14 +19,14 @@
                             <div class="col-12 col-md-6">
                                 <div class="mb-3">
                                     <label for="companyName" class="form-label"><strong>Company Name</strong></label>
-                                    <input type="text" name="company_name" class="form-control form-control-sm" id="companyName" aria-describedby="companyName" value="">
+                                    <input type="text" name="company_name" class="form-control form-control-sm" id="companyName" aria-describedby="companyName" value="{{ $setting->company_name }}">
                                     <span class="text-danger">@error('company_name') {{ $message }} @enderror</span>
                                 </div>
                             </div>
                             <div class="col-12 col-md-6">
                                 <div class="mb-3">
                                     <label for="companyAddress" class="form-label"><strong>Company Address</strong></label>
-                                    <input type="text" name="company_address" class="form-control form-control-sm" id="companyAddress" aria-describedby="companyAddress" value="">
+                                    <input type="text" name="company_address" class="form-control form-control-sm" id="companyAddress" aria-describedby="companyAddress" value="{{ $setting->company_address }}">
                                     <span class="text-danger">@error('company_address') {{ $message }} @enderror</span>
                                 </div>
                             </div>
@@ -35,8 +35,7 @@
                                     <label for="companyLogo" class="form-label"><strong>Company Logo</strong></label>
                                     <input type="file" name="company_logo" class="form-control form-control-sm" id="companyLogo" aria-describedby="companyLogo" accept="image/*" onchange="loadFile(event)">
                                     <span class="text-danger">@error('companyLogo') {{ $message }} @enderror</span>
-                                    <img id="output" style="max-width: 140px; max-height: 120px; padding-top: 0.5rem"/>
-                                    <!-- <img id="output1" src="{{ asset('img/web_contend/logo/') }}" style="max-width: 140px; max-height: 120px; padding-top: 0.5rem"/> -->
+                                    <img id="output" src="{{ asset('img/logo/'. $setting->company_logo) }}" style="max-width: 140px; max-height: 120px; padding-top: 0.5rem"/>
                                 </div>
                             </div>
                             <div class="col-12 col-md-6">
@@ -44,8 +43,7 @@
                                     <label for="aboutImage" class="form-label"><strong>About Image</strong></label>
                                     <input type="file" name="about_image" class="form-control form-control-sm" id="aboutImage" aria-describedby="aboutImage" accept="image/*" onchange="loadFile1(event)">
                                     <span class="text-danger">@error('about_image') {{ $message }} @enderror</span>
-                                    <img id="output1" style="max-width: 140px; max-height: 120px; padding-top: 0.5rem"/>
-                                    <!-- <img id="output2" src="{{ asset('img/web_contend/about_image/' ) }}" style="max-width: 140px; max-height: 120px; padding-top: 0.5rem"/> -->
+                                    <img id="output1" src="{{ asset('img/about/' . $setting->about_image) }}" style="max-width: 140px; max-height: 120px; padding-top: 0.5rem"/>
                                 </div>
                             </div>                   
                             <div class="col-12 col-md-6">
@@ -53,56 +51,56 @@
                                 <div class="mb-1 row link-row">
                                     <label for="facebookLink" class="col-sm-3 col-form-label">Facebook Link</label>
                                     <div class="col-sm-9 d-flex align-items-center">
-                                        <input type="url" name="facebook_link" class="form-control form-control-sm" id="facebookLink" value="">
+                                        <input type="url" name="facebook_link" class="form-control form-control-sm" id="facebookLink" value="{{ $setting->facebook_link }}">
                                         <span class="ps-1 text-danger">@error('facebook_link') {{ $message }} @enderror</span>
                                     </div>
                                 </div>
                                 <div class="mb-1 row link-row">
                                     <label for="linkedInLink" class="col-sm-3 col-form-label">LinkedIn Link</label>
                                     <div class="col-sm-9 d-flex align-items-center">
-                                        <input type="url" name="linkedin_link" class="form-control form-control-sm" id="linkedInLink" value="">
-                                        <span class="ps-1 text-danger">@error('linkedInLink') {{ $message }} @enderror</span>
+                                        <input type="url" name="linkedin_link" class="form-control form-control-sm" id="linkedInLink" value="{{ $setting->linkedin_link }}">
+                                        <span class="ps-1 text-danger">@error('linkedin_link') {{ $message }} @enderror</span>
                                     </div>
                                 </div>
                                 <div class="mb-1 row link-row">
                                     <label for="twitterLink" class="col-sm-3 col-form-label">Twitter Link</label>
                                     <div class="col-sm-9 d-flex align-items-center">
-                                        <input type="url" name="twitter_link" class="form-control form-control-sm" id="twitterLink" value="">
+                                        <input type="url" name="twitter_link" class="form-control form-control-sm" id="twitterLink" value="{{ $setting->twitter_link }}">
                                         <span class="ps-1 text-danger">@error('twitter_link') {{ $message }} @enderror</span>
                                     </div>
                                 </div>
                                 <div class="mb-1 row link-row">
                                     <label for="instagramLink" class="col-sm-3 col-form-label">Instagram Link</label>
                                     <div class="col-sm-9 d-flex align-items-center">
-                                        <input type="url" name="instagram_link" class="form-control form-control-sm" id="instagramLink" value="">
+                                        <input type="url" name="instagram_link" class="form-control form-control-sm" id="instagramLink" value="{{ $setting->instagram_link }}">
                                         <span class="ps-1 text-danger">@error('instagram_link') {{ $message }} @enderror</span>
                                     </div>
                                 </div>
                                 <div class="mb-3">
                                     <label for="aboutCompany" class="form-label"><strong>About Our Company</strong></label>
-                                    <textarea name="about_company" class="form-control" id="aboutCompany" rows="3">  </textarea>
+                                    <textarea name="about_company" class="form-control" id="aboutCompany" rows="3">{{ $setting->about_company }}</textarea>
                                 </div>
                                 <span class="text-danger">@error('about_company') {{ $message }} @enderror</span>
                             </div>
                             <div class="col-12 col-md-6">
                                 <div class="mb-3">
                                     <label for="companyEmail" class="form-label"><strong>Company Email</strong></label>
-                                    <input type="email" name="email" class="form-control form-control-sm" id="companyEmail" aria-describedby="companyEmail" value="">
+                                    <input type="email" name="email" class="form-control form-control-sm" id="companyEmail" aria-describedby="companyEmail" value="{{ $setting->email }}">
                                     <span class="text-danger">@error('email') {{ $message }} @enderror</span>
                                 </div>
                                 <div class="mb-3">
                                     <label for="telePhone" class="form-label"><strong>Tele Phone</strong></label>
-                                    <input type="tel" name="tele_phone" class="form-control form-control-sm" id="telePhone" aria-describedby="telePhone" value="">
+                                    <input type="tel" name="tele_phone" class="form-control form-control-sm" id="telePhone" aria-describedby="telePhone" value="{{ $setting->tele_phone }}">
                                     <span class="text-danger">@error('tele_phone') {{ $message }} @enderror</span>
                                 </div>
                                 <div class="mb-3">
                                     <label for="phone" class="form-label"><strong>Phone</strong></label>
-                                    <input type="tel" name="phone" class="form-control form-control-sm" id="phone" placeholder=""  value="">
+                                    <input type="tel" name="phone" class="form-control form-control-sm" id="phone" placeholder=""  value="{{ $setting->phone }}">
                                     <span class="text-danger">@error('phone') {{ $message }} @enderror</span>
                                 </div>
                                 <div class="mb-3">
                                     <label for="hotline" class="form-label"><strong>Hotline</strong></label>
-                                    <input type="tel" name="hotline" class="form-control form-control-sm" id="hotline" placeholder=""  value="">
+                                    <input type="tel" name="hotline" class="form-control form-control-sm" id="hotline" placeholder=""  value="{{ $setting->hotline }}">
                                     <span class="text-danger">@error('hotline') {{ $message }} @enderror</span>
                                 </div>
                             </div>

@@ -6,13 +6,15 @@ use Illuminate\Support\Carbon;
 use Illuminate\Http\Request;
 use App\Models\Setting;
 use DB;
+use Image;
 
 class SettingController extends Controller
 {
     public function setting() {
-        return view('pages.admin.setting');
+        $setting = Setting::first();
+        return view('pages.admin.setting', compact('setting'));
     }
-    public function settingUpdate(Request $request) {
+    public function settingUpdate(Request $request, $id) {
         $validatedData = $request->validate([
             'company_name' => 'min:4',
             'company_address' => 'min:6',
@@ -30,26 +32,27 @@ class SettingController extends Controller
         ]);
         try {
             DB::beginTransaction();
-            $setting = new Setting();
+            $setting = Setting::FindOrFail($id);
 
             $companyLogo = $request->file('company_logo');
             if($companyLogo) {
-                $companyLogoName = date('YmdHi')."_".$companyLogo->getClientOriginalName();
-                $companyLogo->move('img/logo/', $companyLogoName);
+                $companyLogo_name=hexdec(uniqid()).'.'.$companyLogo->getClientOriginalExtension();
+                Image::make($companyLogo)->resize(800,600)->save('img/logo/'.$companyLogo_name);
+
                 if(file_exists('img/logo/'.$setting->company_logo) AND !empty($setting->company_logo)) {
                     unlink('img/logo/'.$setting->company_logo);
                 }
-                $setting['company_logo'] = $companyLogoName;
+                $setting['company_logo'] = $companyLogo_name;
             }
 
             $aboutImage = $request->file('about_image');
             if($aboutImage) {
-                $aboutImageName = date('YmdHi').$aboutImage->getClientOriginalName();
-                $aboutImage->move('img/about/', $aboutImageName);
+                $aboutImage_name=hexdec(uniqid()).'.'.$aboutImage->getClientOriginalExtension();
+                Image::make($aboutImage)->resize(800,600)->save('img/about/'.$aboutImage_name);
                 if(file_exists('img/about/'.$setting->about_image) AND !empty($setting->about_image)) {
                     unlink('img/about/'.$setting->about_image);
                 }
-                $setting['about_image'] = $aboutImageName;
+                $setting['about_image'] = $aboutImage_name;
             }
 
             $setting->company_name = $request->company_name;
@@ -66,13 +69,27 @@ class SettingController extends Controller
 
             $setting->save();
             DB::commit();
-            return redirect()->back()->with('success', 'Setting Inserted!');
+            return redirect()->back()->with('success', 'Setting Updated!');
         } catch (\Exception $e) {
             DB::rollback();           
 		    return ["error" => $e->getMessage()];
             // return redirect()->back()->with('error', 'Slider update failed!');
         }
-        // $CompanyInfo = CompanyInfo::FindOrFail($id);
+        return $request;
+   }
+}
+
+
+
+
+
+
+
+
+
+
+
+// $CompanyInfo = CompanyInfo::FindOrFail($id);
         // $CompanyInfo->companyAddress = $request->companyAddress;
         // $CompanyInfo->facebookLink = $request->facebookLink;
         // $CompanyInfo->linkedInLink = $request->linkedInLink;
@@ -120,6 +137,3 @@ class SettingController extends Controller
 
         // $CompanyInfo->save();
         // return Redirect()->back()->with("success", "Update successfull");
-        return $request;
-   }
-}
