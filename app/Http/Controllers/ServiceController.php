@@ -14,7 +14,7 @@ class ServiceController extends Controller
     }
     public function serviceInsert(Request $request) {
         $validatedData = $request->validate([
-            'name' => 'required|min:8',
+            'name' => 'required',
             'image' => 'required|mimes:jpeg,jpg,png,gif',
             'description' => 'required|min:12',
         ]);

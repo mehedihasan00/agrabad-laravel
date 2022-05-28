@@ -50,21 +50,13 @@
                             <thead>
                                 <tr>
                                     <th>SL</th>
-                                    <th>Service Name</th>
-                                    <th>Service Image</th>
-                                    <th>Service Description</th>       
+                                    <th>Name</th>
+                                    <th>Image</th>
+                                    <th>Description</th>       
                                     <th id="action" class="datatable-sorter">Action</th>
                                 </tr>
                             </thead>
-                            <tfoot>
-                                <tr>
-                                    <th>SL</th>
-                                    <th>Service Name</th>
-                                    <th>Service Image</th>
-                                    <th>Service Description</th>       
-                                    <th id="action" class="datatable-sorter">Action</th>
-                                </tr>
-                            </tfoot>
+                           
                             <tbody>
                                 @php $count = 1; @endphp
                                 @foreach($services as $service)
@@ -74,7 +66,7 @@
                                     <td><img src="{{ asset('img/service/'.$service->image) }}" alt="" style="height: 33px; width: 50px;"></td>
                                     <!-- <td>{!! $service->description !!}</td> -->
                                     <td>
-                                        {!! Str::words($service->description, 10, '...') !!}
+                                        {!! Str::words($service->description, 2, '...') !!}
                                         <a href="#staticBackdrop{{ $service->id }}" class=""  data-bs-toggle="modal" style="text-decoration: none; color: #000">
                                             <span style="color: #0b5ed7">see more</span>
                                         </a>
