@@ -12,21 +12,13 @@
             </div>
         </div>
         <div class="row">
+            @foreach($videos as $video)
             <div class="col-sm-12 col-md-6 col-lg-4">
                 <div class="video-item wow fadeInUp" data-wow-delay="0.2s">
-                    <iframe width="100%" height="196" src="https://www.youtube.com/embed/8Fbhi2izN0c" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> 
+                    <iframe width="100%" height="196" src="{{ $video->link }}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> 
                 </div>
             </div>
-            <div class="col-sm-12 col-md-6 col-lg-4">
-                <div class="video-item wow fadeInUp" data-wow-delay="0.2s">
-                    <iframe width="100%" height="196" src="https://www.youtube.com/embed/8Fbhi2izN0c" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> 
-                </div>
-            </div>
-            <div class="col-sm-12 col-md-6 col-lg-4">
-                <div class="video-item wow fadeInUp" data-wow-delay="0.2s">
-                    <iframe width="100%" height="196" src="https://www.youtube.com/embed/8Fbhi2izN0c" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> 
-                </div>
-            </div>                                        
+            @endforeach                    
         </div>
     </div>
 </section>

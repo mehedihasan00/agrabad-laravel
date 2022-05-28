@@ -3,34 +3,45 @@
       <section id="slider">
         <div id="main-slide" class="carousel slide" data-ride="carousel">
             <ol class="carousel-indicators">
-                <li data-target="#main-slide" data-slide-to="0" class="active"></li>
-                <li data-target="#main-slide" data-slide-to="1"></li>
-                <li data-target="#main-slide" data-slide-to="2"></li>
+                @php $count = 0; @endphp
+
+                @foreach($sliders as $slider)
+                @if($count == 0) 
+                <li data-target="#main-slide" data-slide-to="{{ $count++ }}" class="active"></li>
+                @else
+                <li data-target="#main-slide" data-slide-to="{{ $count++ }}"></li>
+                @endif
+                @endforeach
+                <!-- <li data-target="#main-slide" data-slide-to="2"></li> -->
             </ol>
             <div class="carousel-inner">
+                @php $count = 0; @endphp
+                @foreach($sliders as $slider)
+                @if($count == 0)
                 <div class="carousel-item active">
-                    <img class="d-block w-100" src="{{ asset('img/slider/slider1.jpg') }}" alt="First slide">
+                    <img class="d-block w-100 slider{{ $count++ }}" src="{{ asset('img/slider/'. $slider->image) }}" alt="First slide">
                     <div class="carousel-caption d-md-block">
-                        <h1 class="wow fadeInDown heading" data-wow-delay=".4s">Creative Networking Seassions</h1>
-                        <p class="fadeInUp wow" data-wow-delay=".6s">Lorem ipsum dolor sit amet, consectetur adipisicing
-                            elit. Provident eum ullam <br> cupiditate nam rerum numquam blanditiis doloribus aspernatur.
+                        <h1 class="wow fadeInDown heading" data-wow-delay=".4s">{{ $slider->title }}</h1>
+                        <p class="fadeInUp wow" data-wow-delay=".6s"> {{ $slider->caption }}
                         </p>
-                        <a href="#pricing" class="fadeInLeft wow btn btn-common" data-wow-delay=".6s">Get Ticket</a>
-                        <a href="#google-map-area" class="fadeInRight wow btn btn-border"
-                            data-wow-delay=".6s">Contact</a>
+                        <a href="{{ $slider->link_url }}" class="fadeInLeft wow btn btn-common" data-wow-delay=".6s"> {{ $slider->link_title }} </a>
+                        <!-- <a href="#google-map-area" class="fadeInRight wow btn btn-border" data-wow-delay=".6s">Contact</a> -->
                     </div>
                 </div>
+                @else
                 <div class="carousel-item">
-                    <img class="d-block w-100" src="{{ asset('img/slider/slider2.jpg') }}" alt="Second slide">
+                <img class="d-block w-100 slider{{ $count++ }}" src="{{ asset('img/slider/'. $slider->image) }}" alt="First slide">
                     <div class="carousel-caption d-md-block">
-                        <h1 class="wow bounceIn heading" data-wow-delay=".7s">20+ Professional Speakers</h1>
-                        <p class="fadeInUp wow" data-wow-delay=".9s">Lorem ipsum dolor sit amet, consectetur adipisicing
-                            elit. Provident eum ullam <br> cupiditate nam rerum numquam blanditiis doloribus aspernatur.
+                        <h1 class="wow fadeInDown heading" data-wow-delay=".4s">{{ $slider->title }}</h1>
+                        <p class="fadeInUp wow" data-wow-delay=".6s"> {{ $slider->caption }}
                         </p>
-                        <a href="#about" class="fadeInUp wow btn btn-border" data-wow-delay=".8s">Learn More</a>
+                        <a href="{{ $slider->link_url }}" class="fadeInLeft wow btn btn-common" data-wow-delay=".6s"> {{ $slider->link_title }} </a>
+                        <!-- <a href="#google-map-area" class="fadeInRight wow btn btn-border" data-wow-delay=".6s">Contact</a> -->
                     </div>
                 </div>
-                <div class="carousel-item">
+                @endif
+                @endforeach
+                <!-- <div class="carousel-item">
                     <img class="d-block w-100" src="{{ asset('img/slider/slider3.jpg') }}" alt="Third slide">
                     <div class="carousel-caption d-md-block">
                         <h1 class="wow fadeInUp heading" data-wow-delay=".6s">Book Your Seat Today!</h1>
@@ -39,7 +50,7 @@
                         </p>
                         <a href="#pricing" class="fadeInUp wow btn btn-common" data-wow-delay=".8s">Book Ticket</a>
                     </div>
-                </div>
+                </div> -->
             </div>
             <a class="carousel-control-prev" href="#main-slide" role="button" data-slide="prev">
                 <span class="carousel-control" aria-hidden="true"><i class="fal fa-chevron-left"></i></span>
@@ -371,126 +382,19 @@
                 </div>
             </div>
             <div class="row no-gutters">
+                @php $count=1 @endphp
+                @foreach($galleries as $gallery)
                 <div class="col-sm-6 col-md-6 col-lg-3">
                     <div class="card wow fadeInUp" data-wow-delay="0.2s">
-                        <img class="card-img-top" src="{{ asset('img/gallery/gallery-1.jpg') }}" alt="Card image cap">
+                        <img class="card-img-top" src="{{ asset('img/Gallery/'. $gallery->image) }}" alt="Card image cap">
                         <div class="image-black-cover">
-                            <a href="{{ asset('img/gallery/gallery-1.jpg') }}" data-gallery="portfolioGallery" class="item-view gallery-lightbox" title="image title">
+                            <a href="{{ asset('img/Gallery/'. $gallery->image) }}" data-gallery="portfolioGallery" class="item-view gallery-lightbox" title="image title">
                                 <i class="fal fa-search-plus"></i>
                             </a>
                         </div>
                     </div>
                 </div>
-                <div class="col-sm-6 col-md-6 col-lg-3">
-                    <div class="card wow fadeInUp" data-wow-delay="0.2s">
-                        <img class="card-img-top" src="{{ asset('img/gallery/gallery-2.jpg') }}" alt="Card image cap">
-                        <div class="image-black-cover">
-                            <a href="{{ asset('img/gallery/gallery-2.jpg') }}" data-gallery="portfolioGallery" class="item-view gallery-lightbox" title="image title">
-                                <i class="fal fa-search-plus"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-sm-6 col-md-6 col-lg-3">
-                    <div class="card wow fadeInUp" data-wow-delay="0.2s">
-                        <img class="card-img-top" src="{{ asset('img/gallery/gallery-3.jpg') }}" alt="Card image cap">
-                        <div class="image-black-cover">
-                            <a href="{{ asset('img/gallery/gallery-3.jpg') }}" data-gallery="portfolioGallery" class="item-view gallery-lightbox" title="image title">
-                                <i class="fal fa-search-plus"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-sm-6 col-md-6 col-lg-3">
-                    <div class="card wow fadeInUp" data-wow-delay="0.2s">
-                        <img class="card-img-top" src="{{ asset('img/gallery/gallery-4.jpg') }}" alt="Card image cap">
-                        <div class="image-black-cover">
-                            <a href="{{ asset('img/gallery/gallery-4.jpg') }}" data-gallery="portfolioGallery" class="item-view gallery-lightbox" title="image title">
-                                <i class="fal fa-search-plus"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-sm-6 col-md-6 col-lg-3">
-                    <div class="card wow fadeInUp" data-wow-delay="0.2s">
-                        <img class="card-img-top" src="{{ asset('img/gallery/gallery-5.jpg') }}" alt="Card image cap">
-                        <div class="image-black-cover">
-                            <a href="{{ asset('img/gallery/gallery-5.jpg') }}" data-gallery="portfolioGallery" class="item-view gallery-lightbox" title="image title">
-                                <i class="fal fa-search-plus"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-sm-6 col-md-6 col-lg-3">
-                    <div class="card wow fadeInUp" data-wow-delay="0.2s">
-                        <img class="card-img-top" src="{{ asset('img/gallery/gallery-6.jpg') }}" alt="Card image cap">
-                        <div class="image-black-cover">
-                            <a href="{{ asset('img/gallery/gallery-6.jpg') }}" data-gallery="portfolioGallery" class="item-view gallery-lightbox" title="image title">
-                                <i class="fal fa-search-plus"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-sm-6 col-md-6 col-lg-3">
-                    <div class="card wow fadeInUp" data-wow-delay="0.2s">
-                        <img class="card-img-top" src="{{ asset('img/gallery/gallery-7.jpg') }}" alt="Card image cap">
-                        <div class="image-black-cover">
-                            <a href="{{ asset('img/gallery/gallery-7.jpg') }}" data-gallery="portfolioGallery" class="item-view gallery-lightbox" title="image title">
-                                <i class="fal fa-search-plus"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-sm-6 col-md-6 col-lg-3">
-                    <div class="card wow fadeInUp" data-wow-delay="0.2s">
-                        <img class="card-img-top" src="{{ asset('img/gallery/gallery-8.jpg') }}" alt="Card image cap">
-                        <div class="image-black-cover">
-                            <a href="{{ asset('img/gallery/gallery-8.jpg') }}" data-gallery="portfolioGallery" class="item-view gallery-lightbox" title="image title">
-                                <i class="fal fa-search-plus"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-sm-6 col-md-6 col-lg-3">
-                    <div class="card wow fadeInUp" data-wow-delay="0.2s">
-                        <img class="card-img-top" src="{{ asset('img/gallery/gallery-9.jpg') }}" alt="Card image cap">
-                        <div class="image-black-cover">
-                            <a href="{{ asset('img/gallery/gallery-9.jpg') }}" data-gallery="portfolioGallery" class="item-view gallery-lightbox" title="image title">
-                                <i class="fal fa-search-plus"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-sm-6 col-md-6 col-lg-3">
-                    <div class="card wow fadeInUp" data-wow-delay="0.2s">
-                        <img class="card-img-top" src="{{ asset('img/gallery/gallery-10.jpg') }}" alt="Card image cap">
-                        <div class="image-black-cover">
-                            <a href="{{ asset('img/gallery/gallery-10.jpg') }}" data-gallery="portfolioGallery" class="item-view gallery-lightbox" title="image title">
-                                <i class="fal fa-search-plus"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-sm-6 col-md-6 col-lg-3">
-                    <div class="card wow fadeInUp" data-wow-delay="0.2s">
-                        <img class="card-img-top" src="{{ asset('img/gallery/gallery-11.jpg') }}" alt="Card image cap">
-                        <div class="image-black-cover">
-                            <a href="{{ asset('img/gallery/gallery-11.jpg') }}" data-gallery="portfolioGallery" class="item-view gallery-lightbox" title="image title">
-                                <i class="fal fa-search-plus"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-sm-6 col-md-6 col-lg-3">
-                    <div class="card wow fadeInUp" data-wow-delay="0.2s">
-                        <img class="card-img-top" src="{{ asset('img/gallery/gallery-12.jpg') }}" alt="Card image cap">
-                        <div class="image-black-cover">
-                            <a href="{{ asset('img/gallery/gallery-12.jpg') }}" data-gallery="portfolioGallery" class="item-view gallery-lightbox" title="image title">
-                                <i class="fal fa-search-plus"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
+                @endforeach
                 <div class="col-12">
                     <div class="see-more-button mt-4 text-center">
                         <a href="gallery.html" class="view-all-btn">View All</a>
