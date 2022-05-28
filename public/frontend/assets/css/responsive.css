@@ -180,7 +180,15 @@
       font-size: 12px;
     }
     .contact-map .container-form {
-      width: 350px;
+      /* width: 350px; */
+      padding: 0;
+      margin-bottom: 15px;
+    }
+    .contact-map .container-map {
+      padding: 0;
+    }
+    .container-map .ifram-box iframe {
+      height: 360px;
     }
     #gallery .gallery-padding .item-view i {
       font-size: 20px;

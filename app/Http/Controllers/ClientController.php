@@ -55,11 +55,7 @@ class ClientController extends Controller
         try {
             DB::beginTransaction();
             $client = Client::find($id);
-            $client->title = $request->title;
-            $client->caption = $request->caption;
-            $client->link_title = $request->link_title;
-            $client->link_url = $request->link_url;
-            $client->status = $request->status;
+            $client->name = $request->name;
 
             $image = $request->file('image');
             if($image) {
@@ -69,7 +65,7 @@ class ClientController extends Controller
                 $imgExt = strtolower($image->getClientOriginalExtension());
                 $imgName = $nameGen. '.' . $imgExt;
                 $upLocation = 'img/client/';
-                Image::make($image)->resize(1920,1024)->save($upLocation . $imgName);
+                Image::make($image)->resize(400,150)->save($upLocation . $imgName);
                 if(file_exists('img/client/'.$client->image) AND !empty($client->image)){
                     unlink('img/client/'.$client->image);
                 }
@@ -80,16 +76,16 @@ class ClientController extends Controller
             return redirect()->back()->with('success', 'Client Updated!');
         } catch (\Exception $e) {
             DB::rollback();           
-		    // return ["error" => $e->getMessage()];
+		    return ["error" => $e->getMessage()];
             // return redirect()->back()->with('error', 'Slider update failed!');
         }
     }
-    public function sliderDelete($id) {
-        $slider = Slider::find($id);
-        if(file_exists('img/slider/'.$slider->image) AND !empty($slider->image)){
-            unlink('img/slider/'.$slider->image);
+    public function clientDelete($id) {
+        $client = client::find($id);
+        if(file_exists('img/client/'.$client->image) AND !empty($client->image)){
+            unlink('img/client/'.$client->image);
         }
-        $slider->delete();
-        return Redirect()->back()->with("success", "Slider Deleted Successfully");
+        $client->delete();
+        return Redirect()->back()->with("success", "Client Deleted Successfully");
     }
 }

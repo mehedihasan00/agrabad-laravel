@@ -12,7 +12,7 @@
                 @csrf
                 <div class="card">
                     <div class="card-header card-mod-back">
-                        <h5 class="add-slider">Add Client+</h4>
+                        <h5 class="add-slider">Update Client</h4>
                     </div>
                     <div class="card-body b-card-body bg-light rounded px-2 px-md-3 py-1 py-md-1" style="font-size: 0.9rem">
                         <!-- <hr style="margin-top: 0.5rem; margin-bottom: 0.3rem; opacity: 0.1"> -->
@@ -28,7 +28,8 @@
                             <img id="output" src="{{ asset('img/client/' . $client->image) }}" style="max-width: 140px; max-height: 120px; padding-top: 0.5rem"/>
                         </div>
                         <hr style="margin-top: 0.5rem; margin-bottom: 0.3rem; opacity: 0.1">
-                        <div class="col-12 d-flex justify-content-end">
+                        <div class="col-12 d-flex justify-content-between">
+                            <a href="{{ url('admin/client') }}" class="btn btn-primary btn-sm">Prev</a>
                             <button type="submit" class="btn btn-mod-content-submit btn-sm">Update Client</button>
                         </div>
                     </div>

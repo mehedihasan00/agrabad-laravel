@@ -6,10 +6,10 @@
                     <i class="fal fa-phone-alt"></i>
                     +8801715-566671
                 </span>
-                <span class="text">
+                <!-- <span class="text">
                     <i class="fal fa-map-marker-alt"></i>
                     <span>Fatema Heights (1st Floor) 16, Agrabad C/A, Chittagong-4100</span>
-                </span>
+                </span> -->
             </div>
             <div class="icon d-none d-md-block">
                 <a href="#" target="_blank" rel="noopener noreferrer">
@@ -44,45 +44,51 @@
             </div>
             <div class="collapse navbar-collapse" id="main-navbar">
                 <ul class="navbar-nav mr-auto w-100 justify-content-end">
-                    <li class="nav-item">
+                    <li class="nav-item {{ (request()->is('/')) ? 'active' : '' }}">
                         <a class="nav-link" href="{{ route('home') }}/#slider">
                             Home
                         </a>
                     </li>
-                    <li class="nav-item">
+                    <li class="nav-item {{ (request()->routeIs('aboutUs')) ? 'active' : '' }}">
                         <a class="nav-link page-scroll" href="{{ route('aboutUs') }}">
                             About
                         </a>
                     </li>
-                    <li class="nav-item">
+                    <li class="nav-item {{ (request()->routeIs('service')) ? 'active' : '' }}">
                         <a class="nav-link page-scroll" href="{{ route('service') }}">
                             Service
                         </a>
                     </li>
-                    <li class="nav-item">
+                    <li class="nav-item {{ (request()->routeIs('team')) ? 'active' : '' }}">
                         <a class="nav-link page-scroll" href="{{ route('team') }}">
                             Management
                         </a>
                     </li>
-                    <li class="nav-item">
+                    <li class="nav-item {{ (request()->routeIs('gallery')) ? 'active' : '' }}">
                         <a class="nav-link page-scroll" href="{{ route('gallery') }}">
                             Gallery
                         </a>
                     </li>
-                    <li class="nav-item">
+                    <li class="nav-item {{ (request()->routeIs('videoGallery')) ? 'active' : '' }}">
                         <a class="nav-link page-scroll" href="{{ route('videoGallery') }}">
                             Videos
                         </a>
                     </li>
-                    <li class="nav-item">
+                    <!-- <li class="nav-item">
                         <a class="nav-link page-scroll" href="{{ url('/') }}#sponsors">
                             Clients
                         </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link page-scroll" href="{{ url('/') }}#google-map-area">
+                    </li> -->
+                    <li class="nav-item {{ (request()->routeIs('contactUs')) ? 'active' : '' }}">
+                        @if(request()->is('/'))
+                        <a class="nav-link page-scroll" href="#contact-map">
                             Contact
                         </a>
+                        @else 
+                        <a class="nav-link page-scroll" href="{{ url('/') }}/#contact-map">
+                            Contact
+                        </a>
+                        @endif
                     </li>
                 </ul>
             </div>

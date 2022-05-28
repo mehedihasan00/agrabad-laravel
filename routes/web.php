@@ -10,6 +10,8 @@ use App\Http\Controllers\GalleryController;
 use App\Http\Controllers\VideoController;
 use App\Http\Controllers\SettingController;
 use App\Http\Controllers\ClientController;
+use App\Http\Controllers\MessageController;
+
 
 
 /*
@@ -67,6 +69,11 @@ Route::post('client/insert', [ClientController::class, 'clientInsert'])->name('s
 Route::get('client/edit/{id}', [ClientController::class, 'clientEdit'])->name('edit.client');
 Route::post('client/update/{id}', [ClientController::class, 'clientUpdate'])->name('update.client');
 Route::get('client/delete/{id}', [ClientController::class, 'clientDelete'])->name('delete.client');
+// Message Route
+Route::post('message/insert', [MessageController::class, 'messageInsert'])->name('store.message');
+Route::get('message/edit/{id}', [MessageController::class, 'messageEdit'])->name('edit.message');
+Route::post('message/update/{id}', [MessageController::class, 'messageUpdate'])->name('update.message');
+Route::get('message/delete/{id}', [MessageController::class, 'messageDelete'])->name('delete.message');
 // Setting
 Route::post('/setting/update/{id}', [SettingController::class, 'settingUpdate'])->name('setting.update');
 
@@ -74,11 +81,12 @@ Route::post('/setting/update/{id}', [SettingController::class, 'settingUpdate'])
 Route::middleware([ 'auth:sanctum', config('jetstream.auth_session'), 'verified' ])->group(function () {
     Route::get('/dashboard', function () { return view('dashboard'); })->name('dashboard');
     Route::get('/admin/dashboard', [HomeController::class, 'dashboard'])->name('adminDashboard');
-    Route::get('/admin/slider', [SliderController::class, 'slider']);
+    Route::get('/admin/slider', [SliderController::class, 'slider'])->name('slider');
     Route::get('/admin/service', [ServiceController::class, 'service']);
     Route::get('/admin/team', [TeamController::class, 'team']);
     Route::get('/admin/gallery', [GalleryController::class, 'gallery']);
     Route::get('/admin/video', [VideoController::class, 'video']);
     Route::get('/admin/setting', [SettingController::class, 'setting']);
     Route::get('/admin/client', [ClientController::class, 'client']);
+    Route::get('/admin/message', [MessageController::class, 'message']);
 });
