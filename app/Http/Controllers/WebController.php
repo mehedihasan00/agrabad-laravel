@@ -35,4 +35,7 @@ class WebController extends Controller
         $videos = Video::latest()->get();
         return view('pages.website.video_gallery', compact('videos'));
     }
+    public function contact() {
+        return view('pages.website.contact_us');
+    }
 }

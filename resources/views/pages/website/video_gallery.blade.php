@@ -6,8 +6,6 @@
             <div class="col-12">
                 <div class="section-title-header text-center">
                     <h1 class="section-title wow fadeInUp" data-wow-delay="0.2s">Latest Videos</h1>
-                    <p class="wow fadeInDown" data-wow-delay="0.2s">Lorem ipsum dolor sit amet, consectetur
-                        adipiscing <br> elit, sed do eiusmod tempor</p>
                 </div>
             </div>
         </div>

@@ -36,7 +36,7 @@
                         <a class="nav-link" href="{{ url('/admin/client') }}">Clients</a> -->
                     </nav>
                 </div>
-                <a class="nav-link" href="{{ url('admin/contactus') }}">
+                <a class="nav-link" href="{{ url('admin/message') }}">
                     <div class="sb-nav-link-icon"><i class="fas fa-envelope"></i></div>
                     Customer Message
                 </a>

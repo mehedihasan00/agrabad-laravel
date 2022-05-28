@@ -37,6 +37,7 @@ Route::get('/serviceDetail', [WebController::class, 'serviceDetail'])->name('ser
 Route::get('/team', [WebController::class, 'team'])->name('team');
 Route::get('/gallery', [WebController::class, 'gallery'])->name('gallery');
 Route::get('/videoGallery', [WebController::class, 'videoGallery'])->name('videoGallery');
+Route::get('/contactUs', [WebController::class, 'contact'])->name('contactus');
 
 // Backend start here
 // slider route
