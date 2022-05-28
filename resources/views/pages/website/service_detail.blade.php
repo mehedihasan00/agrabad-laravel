@@ -21,10 +21,10 @@
         <div class="row">
             <div class="col-md-9">
                 <div class="image-box mb-4">
-                    <img src="img/service/birthday.jpg" class="img-single-service" alt="" srcset="">
+                    <img src="{{ asset('img/service/'.$serviceDetail->image) }}" class="img-single-service" alt="" srcset="">
                 </div>
                 <div class="service-single-box">
-                    <p class="mb-4"><b>Program Description: </b>Prize Distribution, Mezban, Mehedi, Wedding Reception, Walima, Conventions, Exhibitions, Seminar, Symposium, Conferences, teleconferences, Formal Meetings, Trainings, Promotional Events, Presentations, Birthdays Parties, Weddings, Anniversary Parties, Graduation Parties, Iftar parties and a variety of other occasions for celebration.</p>
+                    <p class="mb-4">{!! $serviceDetail->description !!}</p>
                     <div class="row">
                         <div class="col-md-4">
                             <div class="card">

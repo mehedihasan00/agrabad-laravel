@@ -2,10 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
+use App\Models\Video;
 use App\Models\Slider;
 use App\Models\Gallery;
-use App\Models\Video;
+use App\Models\Service;
+use Illuminate\Http\Request;
 
 class WebController extends Controller
 {
@@ -20,10 +21,12 @@ class WebController extends Controller
         return view('pages.website.about_us');
     }
     public function service() {
-        return view('pages.website.service');
+        $service = Service::latest()->get();
+        return view('pages.website.service', compact('service'));
     }
-    public function serviceDetail() {
-        return view('pages.website.service_detail');
+    public function serviceDetail($id) {
+        $serviceDetail = Service::findOrFail($id);
+        return view('pages.website.service_detail', compact('serviceDetail'));
     }
     public function team() {
         return view('pages.website.team');

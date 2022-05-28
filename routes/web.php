@@ -19,10 +19,6 @@ use App\Http\Controllers\MessageController;
 | Web Routes
 |--------------------------------------------------------------------------
 |
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
-|
 */
 // Route::get('/', function () {
 //     return view('welcome');
@@ -33,7 +29,7 @@ use App\Http\Controllers\MessageController;
 Route::get('/', [WebController::class, 'contents'])->name('home');
 Route::get('/aboutUs', [WebController::class, 'aboutUs'])->name('aboutUs');
 Route::get('/service', [WebController::class, 'service'])->name('service');
-Route::get('/serviceDetail', [WebController::class, 'serviceDetail'])->name('serviceDetail');
+Route::get('/serviceDetail/{id}', [WebController::class, 'serviceDetail'])->name('serviceDetail');
 Route::get('/team', [WebController::class, 'team'])->name('team');
 Route::get('/gallery', [WebController::class, 'gallery'])->name('gallery');
 Route::get('/videoGallery', [WebController::class, 'videoGallery'])->name('videoGallery');
