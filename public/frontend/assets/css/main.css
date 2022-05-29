@@ -119,7 +119,9 @@ ul li, ol li {
   line-height: 26px;
   padding-bottom: 36px;
 }
-
+.section-service-detail {
+  font-size: 30px;
+}
 .section-title {
   font-size: 36px;
   color: #333;
@@ -2128,6 +2130,9 @@ a.back-to-top:hover, a.back-to-top:focus {
 /* All the details page start here */
 
 /* service detail */
+#service-detail {
+  background: #f2f2f2;
+}
 #service-detail .service-block-wrapper {
   border: 1px solid #ddd;
   display: inline-block;
@@ -2251,6 +2256,9 @@ a.back-to-top:hover, a.back-to-top:focus {
 }
 
 /* Service Details Page for single product */
+#single-service {
+  background: #f2f2f2;
+}
 .img-single-service {
   width: 100%;
   height: 22rem ;
@@ -2258,6 +2266,11 @@ a.back-to-top:hover, a.back-to-top:focus {
 .fullwidth .section-title-header {
   background-color: #1f381799;
   color: #fff;
+}
+.service-single-box span {
+  letter-spacing: 1px;
+  font-size: 16px;
+  color: #706d6d;
 }
 .service-single-box .card-header {
   font-size: 18px;

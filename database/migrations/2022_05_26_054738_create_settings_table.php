@@ -22,6 +22,7 @@ class CreateSettingsTable extends Migration
             $table->string('twitter_link');
             $table->string('instagram_link');
             $table->text('about_company');
+            $table->text('info');
             $table->string('email');
             $table->string('tele_phone');
             $table->string('phone');

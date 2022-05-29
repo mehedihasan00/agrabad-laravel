@@ -68,20 +68,18 @@
             <div class="row">
                 <div class="col-md-6 col-lg-6 col-xs-12 wow fadeInLeft" data-wow-delay="0.3s">
                     <h2 class="intro-title">Little About</h2>
-                    <h3 class="title-sub">Agrabad Convention Hall</h3>
-                    <p class="intro-desc">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Suscipit nostrum,
-                        doloremque quaerat sit tempora eius est reiciendis accusamus magnam quae. Explicabo dolore
-                        officia, iure a ullam aliquam nemo excepturi.
-                    </p></br>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nisi laboriosam sit nam animi,
-                        distinctio maiores possimus! Suscipit officiis reiciendis vitae omnis eligendi? Tempora at ullam
-                        repudiandae, magnam nemo fuga omnis.</p>
-                    <div class="mt-3 mb-3">
-                        <a href="about-us.html" class="btn btn-common">Read More</a>
-                    </div>
+                    <h3 class="title-sub">{{ $setting->company_name }}</h3>
+                    @if(countwords($setting->about_company) > 80) 
+                        <p class="intro-desc">{!! Str::words($setting->about_company, 80) !!}</p>
+                        <div class="mt-3 mb-3">
+                            <a href="{{ route('aboutUs') }}" class="btn btn-common">Read More</a>
+                        </div>
+                    @else
+                    <p class="intro-desc">{{ $setting->about_company }}</p>
+                    @endif
                 </div>
                 <div class="col-md-6 col-lg-6 col-xs-12 wow fadeInRight" data-wow-delay="0.3s">
-                    <img class="img-fluid" src="{{ asset('img/about/agrabad-convention_hall_bhaban_540x360.jpg') }}" alt="">
+                    <img class="img-fluid" src="{{ asset('img/about/' . $setting->about_image) }}" alt="">
                 </div>
             </div>
         </div>
@@ -392,48 +390,18 @@
             <div class="row mb-30 wow fadeInDown text-center" data-wow-delay="0.3s">
                 <div class="col-12 col-md-12">
                     <div class="owl-carousel owl-theme">
+                        @foreach($client as $index)
                         <div>
                             <div class="col-12">
                                 <div class="spnsors-logo">
-                                    <img class="img-fluid" src="{{ asset('img/client/gold-1.png') }}" alt="">
+                                    <img class="img-fluid" src="{{ asset('img/client/' . $index->image) }}" alt="{{  $index->image }}">
+                                </div>
+                                <div class="sponsors-name">
+                                    <p>{{ $index->name }}</p>
                                 </div>
                             </div>
                         </div>
-                        <div>
-                            <div class="col-12">
-                                <div class="spnsors-logo">
-                                    <img class="img-fluid" src="{{ asset('img/client/gold-2.png') }}" alt="">
-                                </div>
-                            </div>
-                        </div>
-                        <div>
-                            <div class="col-12">
-                                <div class="spnsors-logo">
-                                    <img class="img-fluid" src="{{ asset('img/client/gold-3.png') }}" alt="">
-                                </div>
-                            </div>
-                        </div>
-                        <div>
-                            <div class="col-12">
-                                <div class="spnsors-logo">
-                                    <img class="img-fluid" src="{{ asset('img/client/gold-4.png') }}" alt="">
-                                </div>
-                            </div>
-                        </div>
-                        <div>
-                            <div class="col-12">
-                                <div class="spnsors-logo">
-                                    <img class="img-fluid" src="{{ asset('img/client/1733895055252016.jpg') }}" alt="">
-                                </div>
-                            </div>
-                        </div>
-                        <div>
-                            <div class="col-12">
-                                <div class="spnsors-logo">
-                                    <img class="img-fluid" src="{{ asset('img/client/1733895143051514.jpg') }}" alt="">
-                                </div>
-                            </div>
-                        </div>
+                        @endforeach
                     </div>
                 </div>
             </div>
@@ -448,8 +416,9 @@
                         <i class="fal fa-home-alt"></i>
                         <div class="contact-info">
                             <h3>Direct Contact</h3>
-                            <p>548 Market St.</p>
-                            <p>San Francisco, CA</p>
+                            <p>{{ $setting->company_address }}</p>
+                            <!-- <p>548 Market St.</p>
+                            <p>San Francisco, CA</p> -->
                         </div>
                     </div>
                 </div>
@@ -458,9 +427,11 @@
                         <i class="fal fa-question-circle"></i>
                         <div class="contact-info">
                             <h3>Queries</h3>
-                            <p><a href="/cdn-cgi/l/email-protection" class="__cf_email__"
-                                    data-cfemail="eb838e878784ab84858e9d8e859fc5888486">[email&#160;protected]</a></p>
-                            <p>+123445467567</p>
+                            <p>
+                                <!-- <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="eb838e878784ab84858e9d8e859fc5888486">[email&#160;protected]</a> -->
+                                <a href="mailto:{{ $setting->email }}">{{ $setting->email  }}</a>
+                            </p>
+                            <p>{{ $setting->tele_phone }}</p>
                         </div>
                     </div>
                 </div>
@@ -469,8 +440,8 @@
                         <i class="fal fa-ribbon"></i>
                         <div class="contact-info">
                             <h3>Organized By</h3>
-                            <p>OneEvent LLC</p>
-                            <p>548 Market St.</p>
+                            <p>{{ $setting->company_name }}</p>
+                            <!-- <p>{{ $setting->company_address }}</p> -->
                         </div>
                     </div>
                 </div>

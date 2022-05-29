@@ -27,6 +27,7 @@ class SettingController extends Controller
             'tele_phone' => 'required',
             'phone' => 'required',
             'hotline' => 'required',
+            'info' => 'required|min:6',
             'company_logo' => 'mimes:jpeg,jpg,png,gif',
             'about_image' => 'mimes:jpeg,jpg,png,gif',
         ]);
@@ -37,7 +38,7 @@ class SettingController extends Controller
             $companyLogo = $request->file('company_logo');
             if($companyLogo) {
                 $companyLogo_name=hexdec(uniqid()).'.'.$companyLogo->getClientOriginalExtension();
-                Image::make($companyLogo)->resize(800,600)->save('img/logo/'.$companyLogo_name);
+                Image::make($companyLogo)->resize(200,150)->save('img/logo/'.$companyLogo_name);
 
                 if(file_exists('img/logo/'.$setting->company_logo) AND !empty($setting->company_logo)) {
                     unlink('img/logo/'.$setting->company_logo);
@@ -48,7 +49,7 @@ class SettingController extends Controller
             $aboutImage = $request->file('about_image');
             if($aboutImage) {
                 $aboutImage_name=hexdec(uniqid()).'.'.$aboutImage->getClientOriginalExtension();
-                Image::make($aboutImage)->resize(800,600)->save('img/about/'.$aboutImage_name);
+                Image::make($aboutImage)->resize(540,360)->save('img/about/'.$aboutImage_name);
                 if(file_exists('img/about/'.$setting->about_image) AND !empty($setting->about_image)) {
                     unlink('img/about/'.$setting->about_image);
                 }
@@ -65,6 +66,7 @@ class SettingController extends Controller
             $setting->email = $request->email;
             $setting->tele_phone = $request->tele_phone;
             $setting->phone = $request->phone;
+            $setting->info = $request->info;
             $setting->hotline = $request->hotline;
 
             $setting->save();

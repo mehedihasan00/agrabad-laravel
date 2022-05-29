@@ -4,24 +4,24 @@
             <div class="address text-center">
                 <span class="phone">
                     <i class="fal fa-phone-alt"></i>
-                    +8801715-566671
+                    {{ $setting->phone }}
                 </span>
                 <!-- <span class="text">
                     <i class="fal fa-map-marker-alt"></i>
-                    <span>Fatema Heights (1st Floor) 16, Agrabad C/A, Chittagong-4100</span>
+                    <span>{{ $setting->phone }}</span>
                 </span> -->
             </div>
             <div class="icon d-none d-md-block">
-                <a href="#" target="_blank" rel="noopener noreferrer">
+                <a href="{{ $setting->facebook_link }}" target="_blank" rel="noopener noreferrer">
                     <i class="fab fa-facebook-f"></i>
                 </a>
-                <a href="#" target="_blank" rel="noopener noreferrer">
+                <a href="{{ $setting->twitter_link }}" target="_blank" rel="noopener noreferrer">
                     <i class="fab fa-twitter"></i>
                 </a>
-                <a href="#" target="_blank" rel="noopener noreferrer">
+                <a href="{{ $setting->instagram_link }}" target="_blank" rel="noopener noreferrer">
                     <i class="fab fa-instagram"></i>
                 </a>
-                <a href="#" target="_blank" rel="noopener noreferrer">
+                <a href="{{ $setting->linkedin_link }}" target="_blank" rel="noopener noreferrer">
                     <i class="fab fa-linkedin-in"></i>
                 </a>
             </div>
@@ -107,11 +107,11 @@
             <li>
                 <a class="page-scroll" href="{{ route('videoGallery') }}">Videos</a>
             </li>
-            <li>
+            <!-- <li>
                 <a class="page-scroll" href="{{ route('home') }}#sponsors">Clients</a>
-            </li>
+            </li> -->
             <li>
-                <a class="page-scroll" href="{{ route('home') }}#google-map-area">Contact</a>
+                <a class="page-scroll" href="{{ route('contactus') }}">Contact</a>
             </li>
         </ul>
 

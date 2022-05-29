@@ -5,10 +5,7 @@
                 <div class="col-md-3 col-lg-3 col-sm-6 col-xs-12 wow fadeInUp" data-wow-delay="0.2s">
                     <h3>About</h3>
                     <p>
-                        If you think you have the passion,
-                        attitude and capability to join us
-                        the next big software company
-                        s so that we can get the convers.
+                       {!! Str::words($setting->about_company, 25, ' ') !!}
                     </p>
                 </div>
                 <div class="col-md-3 col-lg-3 col-sm-6 col-xs-12 wow fadeInUp" data-wow-delay="0.4s">

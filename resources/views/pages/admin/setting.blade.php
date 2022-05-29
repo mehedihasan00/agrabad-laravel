@@ -77,32 +77,47 @@
                                     </div>
                                 </div>
                                 <div class="mb-3">
-                                    <label for="aboutCompany" class="form-label"><strong>About Our Company</strong></label>
-                                    <textarea name="about_company" class="form-control" id="aboutCompany" rows="3">{{ $setting->about_company }}</textarea>
+                                    <label for="ckdescription" class="form-label"><strong>About Our Company</strong></label>
+                                    <textarea name="about_company" class="form-control" id="ckdescription" rows="3">{{ $setting->about_company }}</textarea>
                                 </div>
                                 <span class="text-danger">@error('about_company') {{ $message }} @enderror</span>
                             </div>
                             <div class="col-12 col-md-6">
-                                <div class="mb-3">
-                                    <label for="companyEmail" class="form-label"><strong>Company Email</strong></label>
-                                    <input type="email" name="email" class="form-control form-control-sm" id="companyEmail" aria-describedby="companyEmail" value="{{ $setting->email }}">
-                                    <span class="text-danger">@error('email') {{ $message }} @enderror</span>
+                                <div class="row mb-md-4">
+                                    <div class="col-12 col-md-6">
+                                        <div class="mb-3">
+                                            <label for="companyEmail" class="form-label"><strong>Company Email</strong></label>
+                                            <input type="email" name="email" class="form-control form-control-sm" id="companyEmail" aria-describedby="companyEmail" value="{{ $setting->email }}">
+                                            <span class="text-danger">@error('email') {{ $message }} @enderror</span>
+                                        </div>
+                                    </div>
+                                    <div class="col-12 col-md-6">
+                                        <div class="mb-3">
+                                            <label for="telePhone" class="form-label"><strong>Tele Phone</strong></label>
+                                            <input type="tel" name="tele_phone" class="form-control form-control-sm" id="telePhone" aria-describedby="telePhone" value="{{ $setting->tele_phone }}">
+                                            <span class="text-danger">@error('tele_phone') {{ $message }} @enderror</span>
+                                        </div>
+                                    </div>
+                                    <div class="col-12 col-md-6">
+                                        <div class="mb-3">
+                                            <label for="phone" class="form-label"><strong>Phone</strong></label>
+                                            <input type="tel" name="phone" class="form-control form-control-sm" id="phone" placeholder=""  value="{{ $setting->phone }}">
+                                            <span class="text-danger">@error('phone') {{ $message }} @enderror</span>
+                                        </div>
+                                    </div>
+                                    <div class="col-12 col-md-6">
+                                        <div class="mb-3">
+                                            <label for="hotline" class="form-label"><strong>Hotline</strong></label>
+                                            <input type="tel" name="hotline" class="form-control form-control-sm" id="hotline" placeholder=""  value="{{ $setting->hotline }}">
+                                            <span class="text-danger">@error('hotline') {{ $message }} @enderror</span>
+                                        </div>
+                                    </div>
                                 </div>
                                 <div class="mb-3">
-                                    <label for="telePhone" class="form-label"><strong>Tele Phone</strong></label>
-                                    <input type="tel" name="tele_phone" class="form-control form-control-sm" id="telePhone" aria-describedby="telePhone" value="{{ $setting->tele_phone }}">
-                                    <span class="text-danger">@error('tele_phone') {{ $message }} @enderror</span>
+                                    <label for="serviceInfo" class="form-label"><strong>Short Info</strong></label>
+                                    <textarea name="info" class="form-control" id="serviceInfo" rows="3">{{ $setting->info }}</textarea>
                                 </div>
-                                <div class="mb-3">
-                                    <label for="phone" class="form-label"><strong>Phone</strong></label>
-                                    <input type="tel" name="phone" class="form-control form-control-sm" id="phone" placeholder=""  value="{{ $setting->phone }}">
-                                    <span class="text-danger">@error('phone') {{ $message }} @enderror</span>
-                                </div>
-                                <div class="mb-3">
-                                    <label for="hotline" class="form-label"><strong>Hotline</strong></label>
-                                    <input type="tel" name="hotline" class="form-control form-control-sm" id="hotline" placeholder=""  value="{{ $setting->hotline }}">
-                                    <span class="text-danger">@error('hotline') {{ $message }} @enderror</span>
-                                </div>
+                                <span class="text-danger">@error('info') {{ $message }} @enderror</span>
                             </div>
                             <hr style="margin-top: 0.5rem; margin-bottom: 0.3rem; opacity: 0.1">
                             <div class="col-12 d-flex justify-content-end">

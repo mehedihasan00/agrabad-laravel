@@ -6,6 +6,7 @@ use App\Models\Video;
 use App\Models\Slider;
 use App\Models\Gallery;
 use App\Models\Service;
+use App\Models\Client;
 use Illuminate\Http\Request;
 
 class WebController extends Controller
@@ -15,7 +16,8 @@ class WebController extends Controller
         $service = Service::latest()->get();
         $videos = Video::latest()->get();
         $galleries = Gallery::latest()->take(8)->get();
-        return view('pages.website.home', compact('sliders', 'videos', 'galleries', 'service'));
+        $client = Client::latest()->get();
+        return view('pages.website.home', compact('sliders', 'videos', 'galleries', 'service', 'client'));
     }
     public function aboutUs() {
         return view('pages.website.about_us');
