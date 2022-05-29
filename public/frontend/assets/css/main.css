@@ -2247,6 +2247,12 @@ a.back-to-top:hover, a.back-to-top:focus {
 #about-detail p {
   text-align: justify;
 }
+
+.about_img {
+  object-fit: cover;
+  height: 400px;
+  width: 100%;
+}
 @media (max-width: 460px) {
   #about-detail .image-right {
     float: none;
