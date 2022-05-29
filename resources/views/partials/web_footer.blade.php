@@ -5,17 +5,17 @@
                 <div class="col-md-3 col-lg-3 col-sm-6 col-xs-12 wow fadeInUp" data-wow-delay="0.2s">
                     <h3>About</h3>
                     <p>
-                       {!! Str::words($setting->about_company, 25, ' ') !!}
+                       {!! Str::words($setting->about_company, 20, '') !!}
                     </p>
                 </div>
                 <div class="col-md-3 col-lg-3 col-sm-6 col-xs-12 wow fadeInUp" data-wow-delay="0.4s">
-                    <h3>Support</h3>
+                    <h3>Quick Link</h3>
                     <ul>
-                        <li><a href="#">Support</a></li>
-                        <li><a href="#">Docs</a></li>
-                        <li><a href="#">Contact Us</a></li>
-                        <li><a href="#">FAQ</a></li>
-                        <li><a href="#">TOS</a></li>
+                        <li><a href="{{ route('home') }}">Home</a></li>
+                        <li><a href="{{ route('aboutUs') }}">About</a></li>
+                        <li><a href="{{ route('service') }}">Service Us</a></li>
+                        <li><a href="{{ route('team') }}">Management</a></li>
+                        <li><a href="{{ route('gallery') }}">Gallery</a></li>
                     </ul>
                 </div>
                 <div class="col-md-3 col-lg-3 col-sm-6 col-xs-12 wow fadeInUp" data-wow-delay="0.6s">
@@ -29,14 +29,21 @@
                     </ul>
                 </div>
                 <div class="col-md-3 col-lg-3 col-sm-6 col-xs-12 wow fadeInUp" data-wow-delay="0.8s">
-                    <h3>Quick Link</h3>
-                    <ul>
-                        <li><a href="#">Schedule</a></li>
-                        <li><a href="#">Gallery</a></li>
-                        <li><a href="#">Team</a></li>
-                        <li><a href="#">Blog</a></li>
-                        <li><a href="#">Pricing</a></li>
-                    </ul>
+                    <h3>Information</h3>
+                    <p>{{ $setting->info }}</p>
+                    <p class="mt-4">
+                        <i class="fal fa-envelope"></i> &nbsp;
+                        <span>{{ $setting->email }}</span>
+                    </p>
+                    <p class="mt-2">
+                        <i class="fal fa-phone-office"></i> &nbsp;
+                        <a href="tel: {{ $setting->tele_phone }}" class="text-white">{{ $setting->tele_phone }}</a>
+                    </p>
+
+                    <p class="mt-2">
+                        <i class="fal fa-phone-alt"></i>
+                        <a href="tel: {{ $setting->hotline }}" class="text-white">{{ $setting->hotline }}</a>
+                    </p>
                 </div>
             </div>
         </div>
