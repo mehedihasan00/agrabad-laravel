@@ -79,16 +79,10 @@
                             Clients
                         </a>
                     </li> -->
-                    <li class="nav-item {{ (request()->routeIs('contactUs')) ? 'active' : '' }}">
-                        @if(request()->is('/'))
-                        <a class="nav-link page-scroll" href="#contact-map">
+                    <li class="nav-item {{ (request()->routeIs('contactus')) ? 'active' : '' }}">
+                        <a class="nav-link page-scroll" href="{{ route('contactus') }}">
                             Contact
                         </a>
-                        @else 
-                        <a class="nav-link page-scroll" href="{{ url('/') }}/#contact-map">
-                            Contact
-                        </a>
-                        @endif
                     </li>
                 </ul>
             </div>

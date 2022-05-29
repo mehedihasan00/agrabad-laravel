@@ -1,5 +1,6 @@
-<footer class="footer-2 section-padding">
-        <div class="container">
+<footer id="footer">
+    <div class="footer-2">
+        <div class="container section-footer-padding">
             <div class="row">
                 <div class="col-md-3 col-lg-3 col-sm-6 col-xs-12 wow fadeInUp" data-wow-delay="0.2s">
                     <h3>About</h3>
@@ -42,4 +43,11 @@
                 </div>
             </div>
         </div>
+    </div>
+    <div class="footer-bottom">
+        <div class="container footer-box clearfix">
+            <div class="copyright wow fadeInLeft" data-wow-delay="0.2s">&copy; Copyright <strong><a href="http://linktechbd.com/" target="_blank">linktechbd.com</a></strong> All Rights Reserved</div>
+            <div class="credit wow fadeInRight" data-wow-delay="0.2s">Designed by <a href="http://linktechbd.com/" class="highlights">Link Up Technology</a></div>
+        </div>
+    </div>
     </footer>
