@@ -6,6 +6,7 @@ use App\Models\Video;
 use App\Models\Slider;
 use App\Models\Gallery;
 use App\Models\Service;
+use App\Models\Management;
 use Illuminate\Http\Request;
 
 class WebController extends Controller
@@ -29,7 +30,8 @@ class WebController extends Controller
         return view('pages.website.service_detail', compact('serviceDetail'));
     }
     public function team() {
-        return view('pages.website.team');
+        $management = Management::latest()->get();
+        return view('pages.website.team', compact('management'));
     }
     public function gallery() {
         return view('pages.website.gallery');

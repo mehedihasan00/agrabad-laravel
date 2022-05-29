@@ -27,6 +27,7 @@
                     <nav class="sb-sidenav-menu-nested nav">
                         <a class="nav-link {{  request()->routeIs('slider') ? 'active' : '' }}" href="{{ url('/admin/slider') }}">Slider</a>
                         <a class="nav-link" href="{{ url('/admin/service') }}">Services</a>
+                        <a class="nav-link" href="{{ route('management.index') }}">Management</a>
                         <a class="nav-link" href="{{ url('/admin/team') }}">Our Team</a>
                         <a class="nav-link" href="{{ url('/admin/gallery') }}">Gallery</a>
                         <a class="nav-link" href="{{ url('/admin/video') }}">Video</a>
