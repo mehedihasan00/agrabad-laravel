@@ -3,7 +3,8 @@
 <div class="container-fluid px-4">
     <ol class="breadcrumb my-2 nav-path">
         <li class="breadcrumb-item"><a href="{{ url('admin/dashboard') }}">Dashboard</a></li>
-        <li class="breadcrumb-item active">Team</li>
+        <li class="breadcrumb-item"><a href="{{ url('admin/team') }}">Team</a></li>
+        <li class="breadcrumb-item active">Update Team</li>
     </ol>
     <div class="row">
         <div class="col-12 col-md-6 offset-md-3 mb-md-3">
@@ -25,14 +26,14 @@
                                 <div class="mb-3">
                                     <label for="facebook" class="form-label"><strong>Facebook Link</strong></label>
                                     <input type="url" name="fb_link" class="form-control form-control-sm" id="facebook" aria-describedby="facebook" placeholder="https://facebook.com/profile" value="{{ $team->fb_link }}">
-                                    <span class="text-danger">@error('facebook') {{ $message }} @enderror</span>
+                                    <span class="text-danger">@error('fb_link') {{ $message }} @enderror</span>
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="mb-3">
                                     <label for="twitter" class="form-label"><strong>Twitter Link</strong></label>
                                     <input type="url" name="twitter_link" class="form-control form-control-sm" id="twitter" aria-describedby="twitter" placeholder="https://twitter.com/profile" value="{{ $team->twitter_link }}">
-                                    <span class="text-danger">@error('twitter') {{ $message }} @enderror</span>
+                                    <span class="text-danger">@error('twitter_link') {{ $message }} @enderror</span>
                                 </div>
                             </div>
                             <div class="col-md-6">
@@ -47,7 +48,7 @@
                                 <div class="mb-3">
                                     <label for="instagram" class="form-label"><strong>Instagram Link</strong></label>
                                     <input type="url" name="instagram_link" class="form-control form-control-sm" id="instagram" aria-describedby="instagram" placeholder="https://instagram.com/profile" value="{{ $team->instagram_link }}">
-                                    <span class="text-danger">@error('instagram') {{ $message }} @enderror</span>
+                                    <span class="text-danger">@error('instagram_link') {{ $message }} @enderror</span>
                                 </div>
                             </div>
                         </div>

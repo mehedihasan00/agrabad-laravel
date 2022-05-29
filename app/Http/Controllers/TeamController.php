@@ -62,8 +62,8 @@ class TeamController extends Controller
             'twitter_link' => 'required',
             'instagram_link' => 'required',
         ]);
-
-        try {
+        return $request;
+        // try {
             // DB::beginTransaction();
             // $team = Team::find($id);
             // $team->name = $request->name;
@@ -84,12 +84,12 @@ class TeamController extends Controller
             // $team->save();
             // DB::commit();
             // return redirect()->back()->with('success', 'Team Updated!');
-            return $request;
-        } catch (\Exception $e) {
-            DB::rollback();           
-		    return ["error" => $e->getMessage()];
-            // return redirect()->back()->with('error', 'Team insert failed!');
-        }
+        //     return $request;
+        // } catch (\Exception $e) {
+        //     DB::rollback();           
+		//     return ["error" => $e->getMessage()];
+        //     // return redirect()->back()->with('error', 'Team insert failed!');
+        // }
     }
     public function teamDelete($id) {
         $team = Team::find($id);
