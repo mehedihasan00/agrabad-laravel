@@ -49,7 +49,6 @@ Route::post('service/update/{id}', [ServiceController::class, 'serviceUpdate'])-
 Route::get('service/delete/{id}', [ServiceController::class, 'serviceDelete'])->name('delete.service');
 
 // Management Route
-Route::get('managements', [ManagementController::class, 'index'])->name('management.index');
 Route::post('management/store', [ManagementController::class, 'store'])->name('management.store');
 Route::get('management/edit/{id}', [ManagementController::class, 'edit'])->name('management.edit');
 Route::post('management/update/{id}', [ManagementController::class, 'update'])->name('management.update');
@@ -94,4 +93,5 @@ Route::middleware([ 'auth:sanctum', config('jetstream.auth_session'), 'verified'
     Route::get('/admin/setting', [SettingController::class, 'setting']);
     Route::get('/admin/client', [ClientController::class, 'client']);
     Route::get('/admin/message', [MessageController::class, 'message']);
+    Route::get('admin/managements', [ManagementController::class, 'index'])->name('management.index');
 });

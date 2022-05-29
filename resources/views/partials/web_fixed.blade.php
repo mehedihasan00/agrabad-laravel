@@ -1,7 +1,7 @@
 <a href="#" class="back-to-top">
         <i class="fal fa-chevron-up"></i>
     </a>
-    <!-- <div id="preloader">
+    <div id="preloader">
         <div class="sk-cube-grid">
             <div class="sk-cube sk-cube1"></div>
             <div class="sk-cube sk-cube2"></div>
@@ -13,4 +13,4 @@
             <div class="sk-cube sk-cube8"></div>
             <div class="sk-cube sk-cube9"></div>
         </div>
-    </div> -->
+    </div>

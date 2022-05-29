@@ -64,26 +64,27 @@ class TeamController extends Controller
         ]);
 
         try {
-            DB::beginTransaction();
-            $team = Team::find($id);
-            $team->name = $request->name;
-            $team->designation = $request->designation;
-            $team->fb_link = $request->fb_link;
-            $team->twitter_link = $request->twitter_link;
-            $team->instagram_link = $request->instagram_link;
+            // DB::beginTransaction();
+            // $team = Team::find($id);
+            // $team->name = $request->name;
+            // $team->designation = $request->designation;
+            // $team->fb_link = $request->fb_link;
+            // $team->twitter_link = $request->twitter_link;
+            // $team->instagram_link = $request->instagram_link;
 
-            $image = $request->file('image');
-            if($image) {
-                $imageName = date('YmdHi').$image->getClientOriginalName();
-                $image->move('img/team', $imageName);
-                if(file_exists('img/team/'. $team->image) && !empty($team->image)) {
-                    unlink('img/team/' . $team->image);
-                }
-                $team['image'] = $imageName;
-            }
-            $team->save();
-            DB::commit();
-            return redirect()->back()->with('success', 'Team Updated!');
+            // $image = $request->file('image');
+            // if($image) {
+            //     $imageName = date('YmdHi').$image->getClientOriginalName();
+            //     $image->move('img/team', $imageName);
+            //     if(file_exists('img/team/'. $team->image) && !empty($team->image)) {
+            //         unlink('img/team/' . $team->image);
+            //     }
+            //     $team['image'] = $imageName;
+            // }
+            // $team->save();
+            // DB::commit();
+            // return redirect()->back()->with('success', 'Team Updated!');
+            return $request;
         } catch (\Exception $e) {
             DB::rollback();           
 		    return ["error" => $e->getMessage()];

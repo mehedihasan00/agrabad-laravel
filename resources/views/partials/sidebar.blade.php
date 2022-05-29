@@ -33,8 +33,7 @@
                         <a class="nav-link" href="{{ url('/admin/video') }}">Video</a>
                         <a class="nav-link" href="{{ url('/admin/client') }}">Client</a>
                         <!-- <a class="nav-link" href="{{ url('/admin/category') }}">Category</a>
-                        <a class="nav-link" href="{{ url('/admin/product') }}">Product</a>
-                        <a class="nav-link" href="{{ url('/admin/client') }}">Clients</a> -->
+                        <a class="nav-link" href="{{ url('/admin/product') }}">Product</a>-->
                     </nav>
                 </div>
                 <a class="nav-link" href="{{ url('admin/message') }}">

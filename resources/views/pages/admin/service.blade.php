@@ -24,7 +24,7 @@
                             <label for="image" class="form-label"><strong>Service Image</strong></label>
                             <input type="file" name="image" class="form-control form-control-sm" id="image" aria-describedby="image" accept="image/*" onchange="loadFile(event)">
                             <span class="text-danger">@error('image') {{ $message }} @enderror</span>
-                            <img id="output1" style="display:none; max-width: 140px; max-height: 120px; padding-top: 0.5rem"/>
+                            <img id="output" style="display:none; max-width: 140px; max-height: 120px; padding-top: 0.5rem"/>
                         </div>
                         <div class="mb-3">
                             <label for="ckdescription" class="form-label"><strong>Service Description</strong></label>
