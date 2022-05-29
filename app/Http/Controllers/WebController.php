@@ -7,13 +7,15 @@ use App\Models\Slider;
 use App\Models\Gallery;
 use App\Models\Service;
 use App\Models\Client;
+// use App\Models\Management;
+use App\Models\Team;
 use Illuminate\Http\Request;
 
 class WebController extends Controller
 {
     public function contents() {
         $sliders = Slider::latest()->get();
-        $service = Service::latest()->get();
+        $service = Service::latest()->limit(6)->get();
         $videos = Video::latest()->get();
         $galleries = Gallery::latest()->take(8)->get();
         $client = Client::latest()->get();
@@ -31,7 +33,8 @@ class WebController extends Controller
         return view('pages.website.service_detail', compact('serviceDetail'));
     }
     public function team() {
-        return view('pages.website.team');
+        $management = Team::latest()->get();
+        return view('pages.website.team', compact('management'));
     }
     public function gallery() {
         return view('pages.website.gallery');

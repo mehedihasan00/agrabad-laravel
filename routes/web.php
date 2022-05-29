@@ -3,14 +3,15 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\WebController;
 use App\Http\Controllers\HomeController;
-use App\Http\Controllers\SliderController;
-use App\Http\Controllers\ServiceController;
 use App\Http\Controllers\TeamController;
-use App\Http\Controllers\GalleryController;
 use App\Http\Controllers\VideoController;
-use App\Http\Controllers\SettingController;
 use App\Http\Controllers\ClientController;
+use App\Http\Controllers\SliderController;
+use App\Http\Controllers\GalleryController;
 use App\Http\Controllers\MessageController;
+use App\Http\Controllers\ServiceController;
+use App\Http\Controllers\SettingController;
+use App\Http\Controllers\ManagementController;
 
 
 
@@ -46,6 +47,13 @@ Route::post('service/insert', [ServiceController::class, 'serviceInsert'])->name
 Route::get('service/edit/{id}', [ServiceController::class, 'serviceEdit'])->name('edit.service');
 Route::post('service/update/{id}', [ServiceController::class, 'serviceUpdate'])->name('update.service');
 Route::get('service/delete/{id}', [ServiceController::class, 'serviceDelete'])->name('delete.service');
+
+// Management Route
+Route::get('managements', [ManagementController::class, 'index'])->name('management.index');
+Route::post('management/store', [ManagementController::class, 'store'])->name('management.store');
+Route::get('management/edit/{id}', [ManagementController::class, 'edit'])->name('management.edit');
+Route::post('management/update/{id}', [ManagementController::class, 'update'])->name('management.update');
+Route::get('management/delete/{id}', [ManagementController::class, 'delete'])->name('management.delete');
 // Team Route
 Route::post('team/insert', [TeamController::class, 'teamInsert'])->name('store.team');
 Route::get('team/edit/{id}', [TeamController::class, 'teamEdit'])->name('edit.team');

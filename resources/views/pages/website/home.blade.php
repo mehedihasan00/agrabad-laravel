@@ -1,5 +1,6 @@
 @extends('layouts.master_home')
       @section('web_content')
+
       <section id="slider">
         <div id="main-slide" class="carousel slide" data-ride="carousel">
             <ol class="carousel-indicators">
@@ -42,7 +43,7 @@
                 @endif
                 @endforeach
                 <!-- <div class="carousel-item">
-                    <img class="d-block w-100" src="{{ asset('img/slider/slider3.jpg') }}" alt="Third slide">
+                    <img class="d-block w-100" src="" alt="Third slide">
                     <div class="carousel-caption d-md-block">
                         <h1 class="wow fadeInUp heading" data-wow-delay=".6s">Book Your Seat Today!</h1>
                         <p class="fadeInUp wow" data-wow-delay=".8s">Lorem ipsum dolor sit amet, consectetur adipisicing
@@ -108,10 +109,11 @@
                        <a href="{{ route('serviceDetail', $item->id) }}" class="btn btn-detail">Detail</a>
                     </div>
                 </div>
+                
                 @endforeach
                 <div class="col-12">
                     <div class="see-more-button mt-4 text-center">
-                        <a href="service.html" class="view-all-btn">View All</a>
+                        <a href="{{ route('service') }}" class="view-all-btn">View All</a>
                     </div>
                 </div>
             </div>
