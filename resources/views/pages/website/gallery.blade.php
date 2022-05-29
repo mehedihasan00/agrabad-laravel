@@ -11,126 +11,18 @@
             </div>
         </div>
         <div class="row no-gutters">
+            @foreach ($gallery as $item)
             <div class="col-sm-6 col-md-6 col-lg-3">
                 <div class="card wow fadeInUp" data-wow-delay="0.2s">
-                    <img class="card-img-top" src="img/gallery/gallery-1.jpg" alt="Card image cap">
+                    <img class="card-img-top" src="{{ asset('img/gallery/'.$item->image) }}" alt="Card image cap">
                     <div class="image-black-cover">
-                        <a href="img/gallery/gallery-1.jpg" data-gallery="portfolioDetail" class="item-view gallery-lightbox" title="image title">
+                        <a href="{{ asset('img/gallery/'.$item->image) }}" data-gallery="portfolioDetail" class="item-view gallery-lightbox" title="image title">
                             <i class="fal fa-search-plus"></i>
                         </a>
                     </div>
                 </div>
             </div>
-            <div class="col-sm-6 col-md-6 col-lg-3">
-                <div class="card wow fadeInUp" data-wow-delay="0.2s">
-                    <img class="card-img-top" src="img/gallery/gallery-2.jpg" alt="Card image cap">
-                    <div class="image-black-cover">
-                        <a href="img/gallery/gallery-2.jpg" data-gallery="portfolioDetail" class="item-view gallery-lightbox" title="image title">
-                            <i class="fal fa-search-plus"></i>
-                        </a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-sm-6 col-md-6 col-lg-3">
-                <div class="card wow fadeInUp" data-wow-delay="0.2s">
-                    <img class="card-img-top" src="img/gallery/gallery-3.jpg" alt="Card image cap">
-                    <div class="image-black-cover">
-                        <a href="img/gallery/gallery-3.jpg" data-gallery="portfolioDetail" class="item-view gallery-lightbox" title="image title">
-                            <i class="fal fa-search-plus"></i>
-                        </a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-sm-6 col-md-6 col-lg-3">
-                <div class="card wow fadeInUp" data-wow-delay="0.2s">
-                    <img class="card-img-top" src="img/gallery/gallery-4.jpg" alt="Card image cap">
-                    <div class="image-black-cover">
-                        <a href="img/gallery/gallery-4.jpg" data-gallery="portfolioDetail" class="item-view gallery-lightbox" title="image title">
-                            <i class="fal fa-search-plus"></i>
-                        </a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-sm-6 col-md-6 col-lg-3">
-                <div class="card wow fadeInUp" data-wow-delay="0.2s">
-                    <img class="card-img-top" src="img/gallery/gallery-5.jpg" alt="Card image cap">
-                    <div class="image-black-cover">
-                        <a href="img/gallery/gallery-5.jpg" data-gallery="portfolioDetail" class="item-view gallery-lightbox" title="image title">
-                            <i class="fal fa-search-plus"></i>
-                        </a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-sm-6 col-md-6 col-lg-3">
-                <div class="card wow fadeInUp" data-wow-delay="0.2s">
-                    <img class="card-img-top" src="img/gallery/gallery-6.jpg" alt="Card image cap">
-                    <div class="image-black-cover">
-                        <a href="img/gallery/gallery-6.jpg" data-gallery="portfolioDetail" class="item-view gallery-lightbox" title="image title">
-                            <i class="fal fa-search-plus"></i>
-                        </a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-sm-6 col-md-6 col-lg-3">
-                <div class="card wow fadeInUp" data-wow-delay="0.2s">
-                    <img class="card-img-top" src="img/gallery/gallery-7.jpg" alt="Card image cap">
-                    <div class="image-black-cover">
-                        <a href="img/gallery/gallery-7.jpg" data-gallery="portfolioDetail" class="item-view gallery-lightbox" title="image title">
-                            <i class="fal fa-search-plus"></i>
-                        </a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-sm-6 col-md-6 col-lg-3">
-                <div class="card wow fadeInUp" data-wow-delay="0.2s">
-                    <img class="card-img-top" src="img/gallery/gallery-8.jpg" alt="Card image cap">
-                    <div class="image-black-cover">
-                        <a href="img/gallery/gallery-8.jpg" data-gallery="portfolioDetail" class="item-view gallery-lightbox" title="image title">
-                            <i class="fal fa-search-plus"></i>
-                        </a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-sm-6 col-md-6 col-lg-3">
-                <div class="card wow fadeInUp" data-wow-delay="0.2s">
-                    <img class="card-img-top" src="img/gallery/gallery-9.jpg" alt="Card image cap">
-                    <div class="image-black-cover">
-                        <a href="img/gallery/gallery-9.jpg" data-gallery="portfolioDetail" class="item-view gallery-lightbox" title="image title">
-                            <i class="fal fa-search-plus"></i>
-                        </a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-sm-6 col-md-6 col-lg-3">
-                <div class="card wow fadeInUp" data-wow-delay="0.2s">
-                    <img class="card-img-top" src="img/gallery/gallery-10.jpg" alt="Card image cap">
-                    <div class="image-black-cover">
-                        <a href="img/gallery/gallery-10.jpg" data-gallery="portfolioDetail" class="item-view gallery-lightbox" title="image title">
-                            <i class="fal fa-search-plus"></i>
-                        </a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-sm-6 col-md-6 col-lg-3">
-                <div class="card wow fadeInUp" data-wow-delay="0.2s">
-                    <img class="card-img-top" src="img/gallery/gallery-11.jpg" alt="Card image cap">
-                    <div class="image-black-cover">
-                        <a href="img/gallery/gallery-11.jpg" data-gallery="portfolioDetail" class="item-view gallery-lightbox" title="image title">
-                            <i class="fal fa-search-plus"></i>
-                        </a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-sm-6 col-md-6 col-lg-3">
-                <div class="card wow fadeInUp" data-wow-delay="0.2s">
-                    <img class="card-img-top" src="img/gallery/gallery-12.jpg" alt="Card image cap">
-                    <div class="image-black-cover">
-                        <a href="img/gallery/gallery-12.jpg" data-gallery="portfolioDetail" class="item-view gallery-lightbox" title="image title">
-                            <i class="fal fa-search-plus"></i>
-                        </a>
-                    </div>
-                </div>
-            </div>
+            @endforeach
         </div>
     </div>
 </section>
