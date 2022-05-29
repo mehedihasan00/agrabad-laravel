@@ -42,7 +42,7 @@
                 @endif
                 @endforeach
                 <!-- <div class="carousel-item">
-                    <img class="d-block w-100" src="{{ asset('img/slider/slider3.jpg') }}" alt="Third slide">
+                    <img class="d-block w-100" src="" alt="Third slide">
                     <div class="carousel-caption d-md-block">
                         <h1 class="wow fadeInUp heading" data-wow-delay=".6s">Book Your Seat Today!</h1>
                         <p class="fadeInUp wow" data-wow-delay=".8s">Lorem ipsum dolor sit amet, consectetur adipisicing
@@ -106,7 +106,7 @@
                        <div class="service-title">
                             <h5>Wedding</h5>
                        </div>
-                       <a href="{{ route('serviceDetail') }}" class="btn btn-detail">Detail</a>
+                       <a href="" class="btn btn-detail">Detail</a>
                     </div>
                 </div>
                 <div class="col-lg-4 col-sm-6 col-xa-12 mb-3">
@@ -118,7 +118,7 @@
                        <div class="service-title">
                             <h5>Birthday</h5>
                        </div>
-                       <a href="{{ route('serviceDetail') }}" class="btn btn-detail">Detail</a>
+                       <a href="" class="btn btn-detail">Detail</a>
                     </div>
                 </div>
                 <div class="col-lg-4 col-sm-6 col-xa-12 mb-3">
@@ -130,7 +130,7 @@
                        <div class="service-title">
                             <h5>Engagement</h5>
                        </div>
-                       <a href="{{ route('serviceDetail') }}" class="btn btn-detail">Detail</a>
+                       <a href="" class="btn btn-detail">Detail</a>
                     </div>
                 </div>
                 <div class="col-lg-4 col-sm-6 col-xa-12 mb-3">
@@ -142,7 +142,7 @@
                        <div class="service-title">
                             <h5>Gaye Holud</h5>
                        </div>
-                       <a href="{{ route('serviceDetail') }}" class="btn btn-detail">Detail</a>
+                       <a href="" class="btn btn-detail">Detail</a>
                     </div>
                 </div>
                 <div class="col-lg-4 col-sm-6 col-xa-12 mb-3">
@@ -154,7 +154,7 @@
                        <div class="service-title">
                             <h5>Iftar Party</h5>
                        </div>
-                       <a href="{{ route('serviceDetail') }}" class="btn btn-detail">Detail</a>
+                       <a href="" class="btn btn-detail">Detail</a>
                     </div>
                 </div>
                 <div class="col-lg-4 col-sm-6 col-xa-12 mb-3">
@@ -166,7 +166,7 @@
                        <div class="service-title">
                             <h5>Office Meeting</h5>
                        </div>
-                       <a href="{{ route('serviceDetail') }}" class="btn btn-detail">Detail</a>
+                       <a href="" class="btn btn-detail">Detail</a>
                     </div>
                 </div>
                 <div class="col-12">
