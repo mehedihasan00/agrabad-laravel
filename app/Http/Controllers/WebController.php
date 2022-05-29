@@ -12,7 +12,7 @@ class WebController extends Controller
 {
     public function contents() {
         $sliders = Slider::latest()->get();
-        $service = Service::latest()->get();
+        $service = Service::latest()->limit(6)->get();
         $videos = Video::latest()->get();
         $galleries = Gallery::latest()->take(8)->get();
         return view('pages.website.home', compact('sliders', 'videos', 'galleries', 'service'));

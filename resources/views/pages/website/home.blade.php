@@ -1,5 +1,6 @@
 @extends('layouts.master_home')
       @section('web_content')
+
       <section id="slider">
         <div id="main-slide" class="carousel slide" data-ride="carousel">
             <ol class="carousel-indicators">
@@ -107,73 +108,14 @@
                        <div class="service-title">
                             <h5>{{ $item->name }}</h5>
                        </div>
-                       <a href="" class="btn btn-detail">Detail</a>
+                       <a href="{{ route('serviceDetail', $item->id) }}" class="btn btn-detail">Detail</a>
                     </div>
                 </div>
-                <div class="col-lg-4 col-sm-6 col-xa-12 mb-3">
-                    <div class="service-block-wrapper text-center wow fadeInLeft" data-wow-delay="0.2s">
-                       <div class="image-box">
-                           <img src="{{ asset('img/service/birthday.jpg') }}" class="service-img" alt="" srcset="">
-                           <span class="image-overlay"></span>
-                       </div>
-                       <div class="service-title">
-                            <h5>Birthday</h5>
-                       </div>
-                       <a href="" class="btn btn-detail">Detail</a>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-sm-6 col-xa-12 mb-3">
-                    <div class="service-block-wrapper text-center wow fadeInLeft" data-wow-delay="0.2s">
-                       <div class="image-box">
-                           <img src="{{ asset('img/service/engagement.jpg') }}" class="service-img" alt="" srcset="">
-                           <span class="image-overlay"></span>
-                       </div>
-                       <div class="service-title">
-                            <h5>Engagement</h5>
-                       </div>
-                       <a href="" class="btn btn-detail">Detail</a>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-sm-6 col-xa-12 mb-3">
-                    <div class="service-block-wrapper text-center wow fadeInLeft" data-wow-delay="0.2s">
-                       <div class="image-box">
-                           <img src="{{ asset('img/service/gaye-holud.jpg') }}" class="service-img" alt="" srcset="">
-                           <span class="image-overlay"></span>
-                       </div>
-                       <div class="service-title">
-                            <h5>Gaye Holud</h5>
-                       </div>
-                       <a href="" class="btn btn-detail">Detail</a>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-sm-6 col-xa-12 mb-3">
-                    <div class="service-block-wrapper text-center wow fadeInLeft" data-wow-delay="0.2s">
-                       <div class="image-box">
-                           <img src="{{ asset('img/service/iftar-party.jpg') }}" class="service-img" alt="" srcset="">
-                           <span class="image-overlay"></span>
-                       </div>
-                       <div class="service-title">
-                            <h5>Iftar Party</h5>
-                       </div>
-                       <a href="" class="btn btn-detail">Detail</a>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-sm-6 col-xa-12 mb-3">
-                    <div class="service-block-wrapper text-center wow fadeInLeft" data-wow-delay="0.2s">
-                       <div class="image-box">
-                           <img src="{{ asset('img/service/office-meeting.jpg') }}" class="service-img" alt="" srcset="">
-                           <span class="image-overlay"></span>
-                       </div>
-                       <div class="service-title">
-                            <h5>Office Meeting</h5>
-                       </div>
-                       <a href="" class="btn btn-detail">Detail</a>
-                    </div>
-                </div>
+                
                 @endforeach
                 <div class="col-12">
                     <div class="see-more-button mt-4 text-center">
-                        <a href="service.html" class="view-all-btn">View All</a>
+                        <a href="{{ route('service') }}" class="view-all-btn">View All</a>
                     </div>
                 </div>
             </div>
