@@ -42,16 +42,6 @@
                 </div>
                 @endif
                 @endforeach
-                <!-- <div class="carousel-item">
-                    <img class="d-block w-100" src="" alt="Third slide">
-                    <div class="carousel-caption d-md-block">
-                        <h1 class="wow fadeInUp heading" data-wow-delay=".6s">Book Your Seat Today!</h1>
-                        <p class="fadeInUp wow" data-wow-delay=".8s">Lorem ipsum dolor sit amet, consectetur adipisicing
-                            elit. Provident eum ullam <br> cupiditate nam rerum numquam blanditiis doloribus aspernatur.
-                        </p>
-                        <a href="#pricing" class="fadeInUp wow btn btn-common" data-wow-delay=".8s">Book Ticket</a>
-                    </div>
-                </div> -->
             </div>
             <a class="carousel-control-prev" href="#main-slide" role="button" data-slide="prev">
                 <span class="carousel-control" aria-hidden="true"><i class="fal fa-chevron-left"></i></span>
@@ -130,182 +120,31 @@
                 </div>
             </div>
             <div class="row">
+                @foreach($team as $item)
                 <div class="col-sm-6 col-md-6 col-lg-3">
                     <div class="team-item text-center wow fadeInUp" data-wow-delay="0.2s">
                         <div class="team-img">
-                            <img class="img-fluid" src="{{ asset('img/team/team-01.jpg') }}" alt="">
+                            <img class="img-fluid" src="{{ asset('img/team/' . $item->image) }}" alt="">
                             <div class="team-overlay">
                                 <div class="overlay-social-icon text-center">
                                     <ul class="social-icons">
-                                        <li><a href="#"><i class="fab fa-facebook-f" aria-hidden="true"></i></a></li>
-                                        <li><a href="#"><i class="fab fa-twitter" aria-hidden="true"></i></a></li>
-                                        <li><a href="#"><i class="fab fa-instagram" aria-hidden="true"></i></a></li>
+                                        <li><a href="{{ $item->fb_link }}"><i class="fab fa-facebook-f" aria-hidden="true"></i></a></li>
+                                        <li><a href="{{ $item->twitter_link }}"><i class="fab fa-twitter" aria-hidden="true"></i></a></li>
+                                        <li><a href="{{ $item->instagram_link }}"><i class="fab fa-instagram" aria-hidden="true"></i></a></li>
                                     </ul>
                                 </div>
                             </div>
                         </div>
                         <div class="info-text">
-                            <h3><a href="#">Emilly Williams</a></h3>
-                            <p>Product Designer, Tesla</p>
+                            <h3><a href="#">{{ $item->name }}</a></h3>
+                            <p>{{ $item->designation }}</p>
                         </div>
                     </div>
                 </div>
-                <div class="col-sm-6 col-md-6 col-lg-3">
-
-                    <div class="team-item text-center wow fadeInUp" data-wow-delay="0.4s">
-                        <div class="team-img">
-                            <img class="img-fluid" src="{{ asset('img/team/team-02.jpg') }}" alt="">
-                            <div class="team-overlay">
-                                <div class="overlay-social-icon text-center">
-                                    <ul class="social-icons">
-                                        <li><a href="#"><i class="fab fa-facebook-f" aria-hidden="true"></i></a></li>
-                                        <li><a href="#"><i class="fab fa-twitter" aria-hidden="true"></i></a></li>
-                                        <li><a href="#"><i class="fab fa-instagram" aria-hidden="true"></i></a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="info-text">
-                            <h3><a href="#">Patric Green</a></h3>
-                            <p>Front-end Developer, Dropbox</p>
-                        </div>
-                    </div>
-
-                </div>
-                <div class="col-sm-6 col-md-6 col-lg-3">
-                    <div class="team-item text-center wow fadeInUp" data-wow-delay="0.6s">
-                        <div class="team-img">
-                            <img class="img-fluid" src="{{ asset('img/team/team-03.jpg') }}" alt="">
-                            <div class="team-overlay">
-                                <div class="overlay-social-icon text-center">
-                                    <ul class="social-icons">
-                                        <li><a href="#"><i class="fab fa-facebook-f" aria-hidden="true"></i></a></li>
-                                        <li><a href="#"><i class="fab fa-twitter" aria-hidden="true"></i></a></li>
-                                        <li><a href="#"><i class="fab fa-instagram" aria-hidden="true"></i></a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="info-text">
-                            <h3><a href="#">Paul Kowalsy</a></h3>
-                            <p>Lead Designer, TNW</p>
-                        </div>
-                    </div>
-
-                </div>
-                <div class="col-sm-6 col-md-6 col-lg-3">
-
-                    <div class="team-item text-center wow fadeInUp" data-wow-delay="0.8s">
-                        <div class="team-img">
-                            <img class="img-fluid" src="{{ asset('img/team/team-04.jpg') }}" alt="">
-                            <div class="team-overlay">
-                                <div class="overlay-social-icon text-center">
-                                    <ul class="social-icons">
-                                        <li><a href="#"><i class="fab fa-facebook-f" aria-hidden="true"></i></a></li>
-                                        <li><a href="#"><i class="fab fa-twitter" aria-hidden="true"></i></a></li>
-                                        <li><a href="#"><i class="fab fa-instagram" aria-hidden="true"></i></a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="info-text">
-                            <h3><a href="#">Jhon Doe</a></h3>
-                            <p>Back-end Developer, ASUS</p>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-sm-6 col-md-6 col-lg-3">
-                    <div class="team-item text-center wow fadeInUp" data-wow-delay="1s">
-                        <div class="team-img">
-                            <img class="img-fluid" src="{{ asset('img/team/team-05.jpg') }}" alt="">
-                            <div class="team-overlay">
-                                <div class="overlay-social-icon text-center">
-                                    <ul class="social-icons">
-                                        <li><a href="#"><i class="fab fa-facebook-f" aria-hidden="true"></i></a></li>
-                                        <li><a href="#"><i class="fab fa-twitter" aria-hidden="true"></i></a></li>
-                                        <li><a href="#"><i class="fab fa-instagram" aria-hidden="true"></i></a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="info-text">
-                            <h3><a href="#">Daryl Dixon</a></h3>
-                            <p>Full-stack Developer, Google</p>
-                        </div>
-                    </div>
-
-                </div>
-                <div class="col-sm-6 col-md-6 col-lg-3">
-
-                    <div class="team-item text-center wow fadeInUp" data-wow-delay="1.2s">
-                        <div class="team-img">
-                            <img class="img-fluid" src="{{ asset('img/team/team-06.jpg') }}" alt="">
-                            <div class="team-overlay">
-                                <div class="overlay-social-icon text-center">
-                                    <ul class="social-icons">
-                                        <li><a href="#"><i class="fab fa-facebook-f" aria-hidden="true"></i></a></li>
-                                        <li><a href="#"><i class="fab fa-twitter" aria-hidden="true"></i></a></li>
-                                        <li><a href="#"><i class="fab fa-instagram" aria-hidden="true"></i></a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="info-text">
-                            <h3><a href="#">Chris Adams</a></h3>
-                            <p>UI Designer, Apple</p>
-                        </div>
-                    </div>
-
-                </div>
-                <div class="col-sm-6 col-md-6 col-lg-3">
-
-                    <div class="team-item text-center wow fadeInUp" data-wow-delay="1.4s">
-                        <div class="team-img">
-                            <img class="img-fluid" src="{{ asset('img/team/team-07.jpg') }}" alt="">
-                            <div class="team-overlay">
-                                <div class="overlay-social-icon text-center">
-                                    <ul class="social-icons">
-                                        <li><a href="#"><i class="fab fa-facebook-f" aria-hidden="true"></i></a></li>
-                                        <li><a href="#"><i class="fab fa-twitter" aria-hidden="true"></i></a></li>
-                                        <li><a href="#"><i class="fab fa-instagram" aria-hidden="true"></i></a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="info-text">
-                            <h3><a href="#">Lisa Amaira</a></h3>
-                            <p>Product Manager, Uber</p>
-                        </div>
-                    </div>
-
-                </div>
-                <div class="col-sm-6 col-md-6 col-lg-3">
-                    <div class="team-item text-center wow fadeInUp" data-wow-delay="1.6s">
-                        <div class="team-img">
-                            <img class="img-fluid" src="{{ asset('img/team/team-08.jpg') }}" alt="">
-                            <div class="team-overlay">
-                                <div class="overlay-social-icon text-center">
-                                    <ul class="social-icons">
-                                        <li><a href="#"><i class="fab fa-facebook-f" aria-hidden="true"></i></a></li>
-                                        <li><a href="#"><i class="fab fa-twitter" aria-hidden="true"></i></a></li>
-                                        <li><a href="#"><i class="fab fa-instagram" aria-hidden="true"></i></a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="info-text">
-                            <h3><a href="#">Rick Grimes</a></h3>
-                            <p>QA, Samsung</p>
-                        </div>
-                    </div>
-
-                </div>
+                @endforeach
                 <div class="col-12">
                     <div class="see-more-button mt-4 text-center">
-                        <a href="team.html" class="view-all-btn">View All</a>
+                        <a href="{{ route('team') }}" class="view-all-btn">View All</a>
                     </div>
                 </div>
             </div>
@@ -337,7 +176,7 @@
                 @endforeach
                 <div class="col-12">
                     <div class="see-more-button mt-4 text-center">
-                        <a href="gallery.html" class="view-all-btn">View All</a>
+                        <a href="{{ route('gallery') }}" class="view-all-btn">View All</a>
                     </div>
                 </div>
             </div>
@@ -354,24 +193,16 @@
                 </div>
             </div>
             <div class="row">
+                @foreach($videos as $video)
                 <div class="col-sm-12 col-md-6 col-lg-4">
                     <div class="video-item wow fadeInUp" data-wow-delay="0.2s">
-                        <iframe width="100%" height="196" src="https://www.youtube.com/embed/8Fbhi2izN0c" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> 
+                        <iframe width="100%" height="196" src="{{ $video->link }}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> 
                     </div>
                 </div>
-                <div class="col-sm-12 col-md-6 col-lg-4">
-                    <div class="video-item wow fadeInUp" data-wow-delay="0.2s">
-                        <iframe width="100%" height="196" src="https://www.youtube.com/embed/8Fbhi2izN0c" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> 
-                    </div>
-                </div>
-                <div class="col-sm-12 col-md-6 col-lg-4">
-                    <div class="video-item wow fadeInUp" data-wow-delay="0.2s">
-                        <iframe width="100%" height="196" src="https://www.youtube.com/embed/8Fbhi2izN0c" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> 
-                    </div>
-                </div>
+                @endforeach
                 <div class="col-12">
                     <div class="see-more-button mt-4 text-center">
-                        <a href="videos.html" class="view-all-btn">View All</a>
+                        <a href="{{ route('videoGallery') }}" class="view-all-btn">View All</a>
                     </div>
                 </div>                                        
             </div>

@@ -2232,13 +2232,16 @@ a.back-to-top:hover, a.back-to-top:focus {
   background-repeat: no-repeat;
 }
 .all-details .image-box .section-title {
-  color: #fff;
+  color: #b4347a;
 }
 .all-details .image-box .section-title:before {
   background-color: #fff;
 }
 
 /* about us page */
+#about-detail {
+  background: #f2f2f2;
+}
 #about-detail .image-right {
   float: right;
   padding-left: 10px;
@@ -2268,8 +2271,8 @@ a.back-to-top:hover, a.back-to-top:focus {
   object-fit: cover;
 }
 .fullwidth .section-title-header {
-  background-color: #1f381799;
-  color: #fff;
+  background-color: #fff;
+  color: #000;
 }
 .service-single-box span {
   letter-spacing: 1px;

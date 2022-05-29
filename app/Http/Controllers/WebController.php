@@ -16,10 +16,11 @@ class WebController extends Controller
     public function contents() {
         $sliders = Slider::latest()->get();
         $service = Service::latest()->limit(6)->get();
-        $videos = Video::latest()->get();
+        $team = Team::latest()->limit(8)->get();
+        $videos = Video::latest()->limit(3)->get();
         $galleries = Gallery::latest()->take(8)->get();
         $client = Client::latest()->get();
-        return view('pages.website.home', compact('sliders', 'videos', 'galleries', 'service', 'client'));
+        return view('pages.website.home', compact('sliders', 'videos', 'galleries', 'service', 'client', 'team'));
     }
     public function aboutUs() {
         return view('pages.website.about_us');

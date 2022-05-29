@@ -6,8 +6,8 @@
             <div class="container">
                 <div class="row justify-content-center">
                     <div class="col-md-6">
-                        <div class="section-title-header text-center" style="background-color: #1f381799; color: #fff;">
-                            <h1 class="section-title wow fadeInUp" data-wow-delay="0.2s" style="font-size: 30px">{{ $serviceDetail->name }}</h1>
+                        <div class="section-title-header text-center">
+                            <h1 class="section-title pb-0 wow fadeInUp" data-wow-delay="0.2s">{{ $serviceDetail->name }}</h1>
                         </div>
                     </div>
                 </div>
