@@ -7,7 +7,7 @@ use App\Models\Slider;
 use App\Models\Gallery;
 use App\Models\Service;
 use App\Models\Client;
-// use App\Models\Management;
+use App\Models\Management;
 use App\Models\Team;
 use Illuminate\Http\Request;
 
@@ -38,7 +38,8 @@ class WebController extends Controller
         return view('pages.website.team', compact('management'));
     }
     public function gallery() {
-        return view('pages.website.gallery');
+        $gallery = Gallery::latest()->get();
+        return view('pages.website.gallery', compact('gallery'));
     }
     public function videoGallery() {
         $videos = Video::latest()->get();

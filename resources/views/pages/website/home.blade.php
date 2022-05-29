@@ -1,5 +1,5 @@
 @extends('layouts.master_home')
-      @section('web_content')
+@section('web_content')
 
       <section id="slider">
         <div id="main-slide" class="carousel slide" data-ride="carousel">
@@ -70,7 +70,7 @@
                     @endif
                 </div>
                 <div class="col-md-6 col-lg-6 col-xs-12 wow fadeInRight" data-wow-delay="0.3s">
-                    <img class="img-fluid" src="{{ asset('img/about/' . $setting->about_image) }}" alt="">
+                    <img class="img-fluid about_img" src="{{ asset('img/about/' . $setting->about_image) }}" alt="">
                 </div>
             </div>
         </div>
@@ -110,6 +110,7 @@
         </div>
     </section>
 
+    {{-- Management Section --}}
     <section id="team" class="section-padding text-center">
         <div class="container">
             <div class="row">
