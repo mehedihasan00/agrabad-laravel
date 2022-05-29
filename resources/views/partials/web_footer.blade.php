@@ -16,6 +16,7 @@
                         <li><a href="{{ route('service') }}">Service Us</a></li>
                         <li><a href="{{ route('team') }}">Management</a></li>
                         <li><a href="{{ route('gallery') }}">Gallery</a></li>
+                        <li><a href="{{ route('contactus') }}">Contact</a></li>
                     </ul>
                 </div>
 
