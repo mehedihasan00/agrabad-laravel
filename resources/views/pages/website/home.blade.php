@@ -125,11 +125,11 @@
                 <div class="col-sm-6 col-md-6 col-lg-3">
                     <div class="team-item text-center wow fadeInUp" data-wow-delay="0.2s">
                         <div class="team-img">
-                            <img class="img-fluid" src="{{ asset('img/team/' . $item->image) }}" alt="">
+                            <img class="img-fluid" src="{{ asset('img/management/' . $item->image) }}" alt="">
                             <div class="team-overlay">
                                 <div class="overlay-social-icon text-center">
                                     <ul class="social-icons">
-                                        <li><a href="{{ $item->fb_link }}"><i class="fab fa-facebook-f" aria-hidden="true"></i></a></li>
+                                        <li><a href="{{ $item->fb_link }}" target><i class="fab fa-facebook-f" aria-hidden="true"></i></a></li>
                                         <li><a href="{{ $item->twitter_link }}"><i class="fab fa-twitter" aria-hidden="true"></i></a></li>
                                         <li><a href="{{ $item->instagram_link }}"><i class="fab fa-instagram" aria-hidden="true"></i></a></li>
                                     </ul>
