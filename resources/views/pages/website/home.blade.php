@@ -121,7 +121,7 @@
                 </div>
             </div>
             <div class="row">
-                @foreach($team as $item)
+                @foreach($management as $item)
                 <div class="col-sm-6 col-md-6 col-lg-3">
                     <div class="team-item text-center wow fadeInUp" data-wow-delay="0.2s">
                         <div class="team-img">

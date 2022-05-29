@@ -46,21 +46,21 @@ active
                             <div class="col-md-6">
                                 <div class="mb-3">
                                     <label for="title" class="form-label"><strong>Facebook</strong></label>
-                                    <input type="text" name="facebook" value="{{ @$managementData->facebook }}" class="form-control form-control-sm" id="facebook" placeholder="Please Enter Facebook Link">
+                                    <input type="url" name="facebook" value="{{ @$managementData->facebook }}" class="form-control form-control-sm" id="facebook" placeholder="Please Enter Facebook Link">
                                     <span class="text-danger">@error('facebook') {{ $message }} @enderror</span>
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="mb-3">
                                     <label for="title" class="form-label"><strong>Twitter</strong></label>
-                                    <input type="text" name="twitter" value="{{ @$managementData->twitter }}" class="form-control form-control-sm" id="twitter" placeholder="Please Enter Twitter Link">
+                                    <input type="url" name="twitter" value="{{ @$managementData->twitter }}" class="form-control form-control-sm" id="twitter" placeholder="Please Enter Twitter Link">
                                     <span class="text-danger">@error('twitter') {{ $message }} @enderror</span>
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="mb-3">
                                     <label for="title" class="form-label"><strong>Instagram</strong></label>
-                                    <input type="text" name="instagram" value="{{ @$managementData->instagram }}" class="form-control form-control-sm" id="instagram" placeholder="Please Enter Instagram Link">
+                                    <input type="url" name="instagram" value="{{ @$managementData->instagram }}" class="form-control form-control-sm" id="instagram" placeholder="Please Enter Instagram Link">
                                     <span class="text-danger">@error('instagram') {{ $message }} @enderror</span>
                                 </div>
                             </div>
