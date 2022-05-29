@@ -1,5 +1,16 @@
 @extends('layouts.master')
+
+@section('webcontent')
+active show-sub
+@endsection()
+
+@section('management')
+active
+@endsection()
+
 @section('admin-content')
+
+
 <div class="container-fluid px-4">
     <ol class="breadcrumb my-2 nav-path">
         <li class="breadcrumb-item"><a href="{{ url('admin/dashboard') }}">Dashboard</a></li>
@@ -34,7 +45,7 @@
 
                         <div class="mb-3">
                             <label for="title" class="form-label"><strong>Facebook</strong></label>
-                            <input type="text" name="facebook" value="{{ @$managementData->facebook }}" class="form-control form-control-sm" id="facebook" placeholder="Please Enter Facerbook Link">
+                            <input type="text" name="facebook" value="{{ @$managementData->facebook }}" class="form-control form-control-sm" id="facebook" placeholder="Please Enter Facebook Link">
                             <span class="text-danger">@error('facebook') {{ $message }} @enderror</span>
                         </div>
 

@@ -18,7 +18,7 @@
                         <a class="nav-link" href="{{ url('/admin/setting') }}">Company Contents</a>
                     </nav>
                 </div>
-                <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapseLayouts" aria-expanded="false" aria-controls="collapseLayouts">
+                <a class="nav-link @yield('webcontent') collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapseLayouts" aria-expanded="false" aria-controls="collapseLayouts">
                     <div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>
                     Web Contents
                     <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
@@ -27,7 +27,7 @@
                     <nav class="sb-sidenav-menu-nested nav">
                         <a class="nav-link {{  request()->routeIs('slider') ? 'active' : '' }}" href="{{ url('/admin/slider') }}">Slider</a>
                         <a class="nav-link" href="{{ url('/admin/service') }}">Services</a>
-                        <a class="nav-link" href="{{ route('management.index') }}">Management</a>
+                        <a class="nav-link @yield('management')" href="{{ route('management.index') }}">Management</a>
                         <a class="nav-link" href="{{ url('/admin/team') }}">Our Team</a>
                         <a class="nav-link" href="{{ url('/admin/gallery') }}">Gallery</a>
                         <a class="nav-link" href="{{ url('/admin/video') }}">Video</a>
