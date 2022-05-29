@@ -12,7 +12,7 @@
         </div>
         <div class="row">
             <div class="col-md-12 col-lg-12 col-xs-12 wow fadeInLeft" data-wow-delay="0.3s">
-                <div class="image-right text-center">
+                <div class="image-right text-center wow fadeInRight">
                     <img class="img-fluid" src="{{ asset('img/about/' . $setting->about_image) }}" alt="" style="display: inherit;">
                     <span style="font-size: 13px;"><b>Picture:</b> {{ $setting->company_name }}</span>
                 </div>

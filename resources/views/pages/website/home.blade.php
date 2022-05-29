@@ -42,16 +42,6 @@
                 </div>
                 @endif
                 @endforeach
-                <!-- <div class="carousel-item">
-                    <img class="d-block w-100" src="" alt="Third slide">
-                    <div class="carousel-caption d-md-block">
-                        <h1 class="wow fadeInUp heading" data-wow-delay=".6s">Book Your Seat Today!</h1>
-                        <p class="fadeInUp wow" data-wow-delay=".8s">Lorem ipsum dolor sit amet, consectetur adipisicing
-                            elit. Provident eum ullam <br> cupiditate nam rerum numquam blanditiis doloribus aspernatur.
-                        </p>
-                        <a href="#pricing" class="fadeInUp wow btn btn-common" data-wow-delay=".8s">Book Ticket</a>
-                    </div>
-                </div> -->
             </div>
             <a class="carousel-control-prev" href="#main-slide" role="button" data-slide="prev">
                 <span class="carousel-control" aria-hidden="true"><i class="fal fa-chevron-left"></i></span>
@@ -131,17 +121,17 @@
                 </div>
             </div>
             <div class="row">
-                @foreach ($management as $item)
+                @foreach($team as $item)
                 <div class="col-sm-6 col-md-6 col-lg-3">
                     <div class="team-item text-center wow fadeInUp" data-wow-delay="0.2s">
                         <div class="team-img">
-                            <img class="img-fluid" src="{{ asset('img/management/'.$item->image) }}" alt="">
+                            <img class="img-fluid" src="{{ asset('img/team/' . $item->image) }}" alt="">
                             <div class="team-overlay">
                                 <div class="overlay-social-icon text-center">
                                     <ul class="social-icons">
-                                        <li><a href="{{ $item->facebook }}" target="_blank"><i class="fab fa-facebook-f" aria-hidden="true"></i></a></li>
-                                        <li><a href="{{ $item->twitter }}" target="_blank"><i class="fab fa-twitter" aria-hidden="true"></i></a></li>
-                                        <li><a href="{{ $item->instagram }}" target="_blank"><i class="fab fa-instagram" aria-hidden="true"></i></a></li>
+                                        <li><a href="{{ $item->fb_link }}"><i class="fab fa-facebook-f" aria-hidden="true"></i></a></li>
+                                        <li><a href="{{ $item->twitter_link }}"><i class="fab fa-twitter" aria-hidden="true"></i></a></li>
+                                        <li><a href="{{ $item->instagram_link }}"><i class="fab fa-instagram" aria-hidden="true"></i></a></li>
                                     </ul>
                                 </div>
                             </div>
@@ -151,13 +141,14 @@
                             <p>{{ $item->designation }}</p>
                         </div>
                     </div>
-
                 </div>
                 @endforeach
-                
-                
+                <div class="col-12">
+                    <div class="see-more-button mt-4 text-center">
+                        <a href="{{ route('team') }}" class="view-all-btn">View All</a>
+                    </div>
+                </div>
             </div>
-            
         </div>
     </section>
 
@@ -203,18 +194,16 @@
                 </div>
             </div>
             <div class="row">
-                @foreach ($videos as $item)
+                @foreach($videos as $video)
                 <div class="col-sm-12 col-md-6 col-lg-4">
                     <div class="video-item wow fadeInUp" data-wow-delay="0.2s">
-                        <iframe width="100%" height="196" src="{{ $item-> }}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> 
+                        <iframe width="100%" height="196" src="{{ $video->link }}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> 
                     </div>
                 </div>
                 @endforeach
-               
-                
                 <div class="col-12">
                     <div class="see-more-button mt-4 text-center">
-                        <a href="{{ route('gallery') }}" class="view-all-btn">View All</a>
+                        <a href="{{ route('videoGallery') }}" class="view-all-btn">View All</a>
                     </div>
                 </div>                                        
             </div>
