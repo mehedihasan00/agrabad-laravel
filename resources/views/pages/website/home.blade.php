@@ -149,7 +149,6 @@
                             <p>Product Designer, Tesla</p>
                         </div>
                     </div>
-
                 </div>
                 <div class="col-sm-6 col-md-6 col-lg-3">
 
@@ -174,7 +173,6 @@
 
                 </div>
                 <div class="col-sm-6 col-md-6 col-lg-3">
-
                     <div class="team-item text-center wow fadeInUp" data-wow-delay="0.6s">
                         <div class="team-img">
                             <img class="img-fluid" src="{{ asset('img/team/team-03.jpg') }}" alt="">

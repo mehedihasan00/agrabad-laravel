@@ -817,6 +817,9 @@ a.back-to-top:hover, a.back-to-top:focus {
 
 
 /* My header code ends here */
+#about {
+  background: #f2f2f2;
+}
 #about .intro-title {
   font-size: 22px;
   font-weight: 400;
