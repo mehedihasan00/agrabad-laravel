@@ -139,9 +139,9 @@
                             <div class="team-overlay">
                                 <div class="overlay-social-icon text-center">
                                     <ul class="social-icons">
-                                        <li><a href="{{ $item->facebook }}"><i class="fab fa-facebook-f" aria-hidden="true"></i></a></li>
-                                        <li><a href="{{ $item->twitter }}"><i class="fab fa-twitter" aria-hidden="true"></i></a></li>
-                                        <li><a href="{{ $item->instagram }}"><i class="fab fa-instagram" aria-hidden="true"></i></a></li>
+                                        <li><a href="{{ $item->facebook }}" target="_blank"><i class="fab fa-facebook-f" aria-hidden="true"></i></a></li>
+                                        <li><a href="{{ $item->twitter }}" target="_blank"><i class="fab fa-twitter" aria-hidden="true"></i></a></li>
+                                        <li><a href="{{ $item->instagram }}" target="_blank"><i class="fab fa-instagram" aria-hidden="true"></i></a></li>
                                     </ul>
                                 </div>
                             </div>
@@ -203,24 +203,18 @@
                 </div>
             </div>
             <div class="row">
+                @foreach ($videos as $item)
                 <div class="col-sm-12 col-md-6 col-lg-4">
                     <div class="video-item wow fadeInUp" data-wow-delay="0.2s">
-                        <iframe width="100%" height="196" src="https://www.youtube.com/embed/8Fbhi2izN0c" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> 
+                        <iframe width="100%" height="196" src="{{ $item-> }}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> 
                     </div>
                 </div>
-                <div class="col-sm-12 col-md-6 col-lg-4">
-                    <div class="video-item wow fadeInUp" data-wow-delay="0.2s">
-                        <iframe width="100%" height="196" src="https://www.youtube.com/embed/8Fbhi2izN0c" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> 
-                    </div>
-                </div>
-                <div class="col-sm-12 col-md-6 col-lg-4">
-                    <div class="video-item wow fadeInUp" data-wow-delay="0.2s">
-                        <iframe width="100%" height="196" src="https://www.youtube.com/embed/8Fbhi2izN0c" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> 
-                    </div>
-                </div>
+                @endforeach
+               
+                
                 <div class="col-12">
                     <div class="see-more-button mt-4 text-center">
-                        <a href="videos.html" class="view-all-btn">View All</a>
+                        <a href="{{ route('gallery') }}" class="view-all-btn">View All</a>
                     </div>
                 </div>                                        
             </div>
