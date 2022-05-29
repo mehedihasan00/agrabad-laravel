@@ -2298,3 +2298,10 @@ a.back-to-top:hover, a.back-to-top:focus {
 #single-service ul i {
   color: #ad1f6d;
 }
+
+
+/* glight box */
+.glightbox-clean .gslide-title {
+  text-align: center;
+  margin-bottom: 0;
+}

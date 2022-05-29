@@ -31,7 +31,7 @@
                         <a class="nav-link" href="{{ url('/admin/team') }}">Our Team</a>
                         <a class="nav-link" href="{{ url('/admin/gallery') }}">Gallery</a>
                         <a class="nav-link" href="{{ url('/admin/video') }}">Video</a>
-                        <a class="nav-link" href="{{ url('/admin/client') }}">Video</a>
+                        <a class="nav-link" href="{{ url('/admin/client') }}">Client</a>
                         <!-- <a class="nav-link" href="{{ url('/admin/category') }}">Category</a>
                         <a class="nav-link" href="{{ url('/admin/product') }}">Product</a>
                         <a class="nav-link" href="{{ url('/admin/client') }}">Clients</a> -->

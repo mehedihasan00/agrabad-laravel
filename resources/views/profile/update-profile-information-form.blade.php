@@ -1,6 +1,3 @@
-@extends('layouts.master')
-@section('admin-content')
-
 
     <x-slot name="form">
         <!-- Profile Photo -->
@@ -88,5 +85,3 @@
         </x-jet-button>
     </x-slot>
 
-
-@endsection

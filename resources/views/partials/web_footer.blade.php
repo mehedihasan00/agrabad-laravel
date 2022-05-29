@@ -44,7 +44,7 @@
     <div class="footer-bottom">
         <div class="container footer-box clearfix">
             <div class="copyright wow fadeInLeft" data-wow-delay="0.2s">&copy; Copyright <strong><a href="http://linktechbd.com/" target="_blank">linktechbd.com</a></strong> All Rights Reserved</div>
-            <div class="credit wow fadeInRight" data-wow-delay="0.2s">Designed by <a href="http://linktechbd.com/" class="highlights">Link Up Technology</a></div>
+            <div class="credit wow fadeInRight" data-wow-delay="0.2s">Designed by <a href="http://linktechbd.com/" class="highlights" target="_blank">Link Up Technology</a></div>
         </div>
     </div>
     </footer>

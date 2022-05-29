@@ -11,7 +11,7 @@
             <div class="card bg-secondary text-white mb-4">
                 <div class="card-body">
                     <h5 class="card-title">Total Admin</h5>
-                    <p class="card-text">0</p>
+                    <p class="card-text">{{ count($users) }}</p>
                     <!-- <a href="#" class="card-link text-white">Card link</a>
                     <a href="#" class="card-link text-white">Another link</a> -->
                 </div>
@@ -25,7 +25,7 @@
             <div class="card bg-secondary text-white mb-4">
                 <div class="card-body">
                     <h5 class="card-title">Total Message</h5>
-                    <p class="card-text">0</p>
+                    <p class="card-text">{{ count($message) }}</p>
                 </div>
                 <div class="card-footer d-flex align-items-center justify-content-between">
                     <a class="small text-white stretched-link" href="{{  url('admin/contactus') }}">View Details</a>
@@ -36,8 +36,8 @@
         <div class="col-xl-3 col-md-6">
             <div class="card bg-secondary text-white mb-4">
                 <div class="card-body">
-                    <h5 class="card-title">Total Product</h5>
-                    <p class="card-text">0</p>
+                    <h5 class="card-title">Total Service</h5>
+                    <p class="card-text">{{ count($service) }}</p>
                 </div>
                 <div class="card-footer d-flex align-items-center justify-content-between">
                     <a class="small text-white stretched-link" href="{{  url('admin/product') }}">View Details</a>
@@ -49,7 +49,7 @@
             <div class="card bg-secondary text-white mb-4">
                 <div class="card-body">
                     <h5 class="card-title">Total Slider</h5>
-                    <p class="card-text">0</p>
+                    <p class="card-text">{{ count($slider) }}</p>
                 </div>
                 <div class="card-footer d-flex align-items-center justify-content-between">
                     <a class="small text-white stretched-link" href="{{  url('admin/slider') }}">View Details</a>
