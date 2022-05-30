@@ -1,4 +1,5 @@
 @extends('layouts.master_home')
+@section('title', 'Management')
 @section('web_content')
 <section id="team" class="section-padding text-center">
     <div class="container">
@@ -14,7 +15,7 @@
             <div class="col-sm-6 col-md-6 col-lg-3">
                 <div class="team-item text-center wow fadeInUp" data-wow-delay="0.2s">
                     <div class="team-img">
-                        <img class="img-fluid" src="{{ asset('img/team/'.$item->image) }}" alt="" style="width: 255px; height: 255px">
+                        <img class="img-fluid" src="{{ asset('img/management/'.$item->image) }}" onerror="this.onerror=null; this.src='img/no.png'" alt="" style="width: 255px; height: 255px">
                         <div class="team-overlay">
                             <div class="overlay-social-icon text-center">
                                 <ul class="social-icons">

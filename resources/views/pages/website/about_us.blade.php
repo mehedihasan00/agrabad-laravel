@@ -1,4 +1,5 @@
 @extends('layouts.master_home')
+@section('title', 'About Us')
 @section('web_content')
 <section id="about-detail" class="section-padding">
     <div class="container">

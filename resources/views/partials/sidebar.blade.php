@@ -28,7 +28,7 @@
                         <a class="nav-link {{  request()->routeIs('slider') ? 'active' : '' }}" href="{{ url('/admin/slider') }}">Slider</a>
                         <a class="nav-link" href="{{ url('/admin/service') }}">Services</a>
                         <a class="nav-link @yield('management')" href="{{ route('management.index') }}">Management</a>
-                        <a class="nav-link" href="{{ url('/admin/team') }}">Our Team</a>
+                        <!-- <a class="nav-link" href="{{ url('/admin/team') }}">Our Team</a> -->
                         <a class="nav-link" href="{{ url('/admin/gallery') }}">Gallery</a>
                         <a class="nav-link" href="{{ url('/admin/video') }}">Video</a>
                         <a class="nav-link" href="{{ url('/admin/client') }}">Client</a>

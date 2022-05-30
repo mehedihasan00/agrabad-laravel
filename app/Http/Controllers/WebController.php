@@ -8,7 +8,7 @@ use App\Models\Gallery;
 use App\Models\Service;
 use App\Models\Client;
 use App\Models\Management;
-use App\Models\Team;
+// use App\Models\Team;
 use Illuminate\Http\Request;
 
 class WebController extends Controller
@@ -35,7 +35,7 @@ class WebController extends Controller
         return view('pages.website.service_detail', compact('serviceDetail'));
     }
     public function team() {
-        $management = Team::latest()->get();
+        $management = Management::latest()->get();
         return view('pages.website.team', compact('management'));
     }
     public function gallery() {

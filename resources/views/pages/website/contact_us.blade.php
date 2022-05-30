@@ -1,4 +1,5 @@
 @extends('layouts.master_home')
+@section('title', 'Contact Us')
 @section('web_content')
 <section id="contact-map" class="contact-map section-padding">
         <div class="container">

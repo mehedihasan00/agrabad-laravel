@@ -1,6 +1,5 @@
 @extends('layouts.master_home')
 @section('web_content')
-
       <section id="slider">
         <div id="main-slide" class="carousel slide" data-ride="carousel">
             <ol class="carousel-indicators">
@@ -22,9 +21,8 @@
                 <div class="carousel-item active">
                     <img class="d-block w-100 slider{{ $count++ }}" src="{{ asset('img/slider/'. $slider->image) }}" alt="First slide">
                     <div class="carousel-caption d-md-block">
-                        <h1 class="wow fadeInDown heading" data-wow-delay=".4s">{{ $slider->title }}</h1>
-                        <p class="fadeInUp wow" data-wow-delay=".6s"> {{ $slider->caption }}
-                        </p>
+                        <h3 class="wow fadeInDown heading" data-wow-delay=".4s">{{ $slider->title }}</h3>
+                        <p class="fadeInUp wow" data-wow-delay=".6s"> {{ $slider->caption }}</p>
                         <a href="{{ $slider->link_url }}" class="fadeInLeft wow btn btn-common" data-wow-delay=".6s"> {{ $slider->link_title }} </a>
                         <!-- <a href="#google-map-area" class="fadeInRight wow btn btn-border" data-wow-delay=".6s">Contact</a> -->
                     </div>
@@ -33,9 +31,8 @@
                 <div class="carousel-item">
                 <img class="d-block w-100 slider{{ $count++ }}" src="{{ asset('img/slider/'. $slider->image) }}" alt="First slide">
                     <div class="carousel-caption d-md-block">
-                        <h1 class="wow fadeInDown heading" data-wow-delay=".4s">{{ $slider->title }}</h1>
-                        <p class="fadeInUp wow" data-wow-delay=".6s"> {{ $slider->caption }}
-                        </p>
+                        <h3 class="wow fadeInDown heading" data-wow-delay=".4s">{{ $slider->title }}</h3>
+                        <p class="fadeInUp wow" data-wow-delay=".6s"> {{ $slider->caption }}</p>
                         <a href="{{ $slider->link_url }}" class="fadeInLeft wow btn btn-common" data-wow-delay=".6s"> {{ $slider->link_title }} </a>
                         <!-- <a href="#google-map-area" class="fadeInRight wow btn btn-border" data-wow-delay=".6s">Contact</a> -->
                     </div>
@@ -58,7 +55,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-6 col-lg-6 col-xs-12 wow fadeInLeft" data-wow-delay="0.3s">
-                    <h2 class="intro-title">Little About</h2>
+                    <!-- <h2 class="intro-title">Little About</h2> -->
                     <h3 class="title-sub">{{ $setting->company_name }}</h3>
                     @if(countwords($setting->about_company) > 80) 
                         <p class="intro-desc">{!! Str::words($setting->about_company, 80) !!}</p>
@@ -70,7 +67,7 @@
                     @endif
                 </div>
                 <div class="col-md-6 col-lg-6 col-xs-12 wow fadeInRight" data-wow-delay="0.3s">
-                    <img class="img-fluid about_img" src="{{ asset('img/about/' . $setting->about_image) }}" alt="">
+                    <img class="img-fluid about_img" src="{{ asset('img/about/' . $setting->about_image) }}" onerror="this.onerror=null; this.src='img/no.png'" alt="">
                 </div>
             </div>
         </div>
@@ -90,7 +87,7 @@
                 <div class="col-lg-4 col-sm-6 col-xa-12 mb-3">
                     <div class="service-block-wrapper text-center wow fadeInLeft" data-wow-delay="0.2s">
                        <div class="image-box">
-                           <img src="{{ asset('img/service/'.$item->image) }}" class="service-img" alt="" srcset="">
+                           <img src="{{ asset('img/service/'.$item->image) }}" class="service-img" onerror="this.onerror=null; this.src='img/no.png'" alt="" srcset="">
                            <span class="image-overlay"></span>
                        </div>
                        <div class="service-title">
@@ -102,7 +99,7 @@
                 
                 @endforeach
                 <div class="col-12">
-                    <div class="see-more-button mt-4 text-center">
+                    <div class="see-more-button mt-4 text-center wow fadeInUp" data-wow-delay="0.2s">
                         <a href="{{ route('service') }}" class="view-all-btn">View All</a>
                     </div>
                 </div>
@@ -125,13 +122,13 @@
                 <div class="col-sm-6 col-md-6 col-lg-3">
                     <div class="team-item text-center wow fadeInUp" data-wow-delay="0.2s">
                         <div class="team-img">
-                            <img class="img-fluid" src="{{ asset('img/management/' . $item->image) }}" alt="">
+                            <img class="img-fluid" src="{{ asset('img/management/' . $item->image) }}" onerror="this.onerror=null; this.src='img/no.png'" alt="">
                             <div class="team-overlay">
                                 <div class="overlay-social-icon text-center">
                                     <ul class="social-icons">
-                                        <li><a href="{{ $item->fb_link }}" target><i class="fab fa-facebook-f" aria-hidden="true"></i></a></li>
-                                        <li><a href="{{ $item->twitter_link }}"><i class="fab fa-twitter" aria-hidden="true"></i></a></li>
-                                        <li><a href="{{ $item->instagram_link }}"><i class="fab fa-instagram" aria-hidden="true"></i></a></li>
+                                        <li><a href="{{ $item->facebook }}" target="_blank"><i class="fab fa-facebook-f" aria-hidden="true"></i></a></li>
+                                        <li><a href="{{ $item->twitter }}" target="_blank"><i class="fab fa-twitter" aria-hidden="true"></i></a></li>
+                                        <li><a href="{{ $item->instagram }}" target="_blank"><i class="fab fa-instagram" aria-hidden="true"></i></a></li>
                                     </ul>
                                 </div>
                             </div>
@@ -144,7 +141,7 @@
                 </div>
                 @endforeach
                 <div class="col-12">
-                    <div class="see-more-button mt-4 text-center">
+                    <div class="see-more-button mt-4 text-center wow fadeInUp" data-wow-delay="0.2s">
                         <a href="{{ route('team') }}" class="view-all-btn">View All</a>
                     </div>
                 </div>
@@ -166,9 +163,9 @@
                 @foreach($galleries as $gallery)
                 <div class="col-sm-6 col-md-6 col-lg-3">
                     <div class="card wow fadeInUp" data-wow-delay="0.2s">
-                        <img class="card-img-top" src="{{ asset('img/Gallery/'. $gallery->image) }}" alt="Card image cap">
+                        <img class="card-img-top" src="{{ asset('img/gallery/'. $gallery->image) }}" onerror="this.onerror=null; this.src='img/no.png'" alt="Card image cap">
                         <div class="image-black-cover">
-                            <a href="{{ asset('img/Gallery/'. $gallery->image) }}" data-gallery="portfolioGallery" class="item-view gallery-lightbox" title="image title">
+                            <a href="{{ asset('img/gallery/'. $gallery->image) }}" data-gallery="portfolioGallery" class="item-view gallery-lightbox" title="{{ $gallery->title }}">
                                 <i class="fal fa-search-plus"></i>
                             </a>
                         </div>
@@ -176,7 +173,7 @@
                 </div>
                 @endforeach
                 <div class="col-12">
-                    <div class="see-more-button mt-4 text-center">
+                    <div class="see-more-button mt-4 text-center wow fadeInUp" data-wow-delay="0.2s">
                         <a href="{{ route('gallery') }}" class="view-all-btn">View All</a>
                     </div>
                 </div>
@@ -196,13 +193,13 @@
             <div class="row">
                 @foreach($videos as $video)
                 <div class="col-sm-12 col-md-6 col-lg-4">
-                    <div class="video-item wow fadeInUp" data-wow-delay="0.2s">
+                    <div class="video-item wow fadeInUp" data-wow-delay="0.2s" data-wow-delay="0.2s">
                         <iframe width="100%" height="196" src="{{ $video->link }}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> 
                     </div>
                 </div>
                 @endforeach
                 <div class="col-12">
-                    <div class="see-more-button mt-4 text-center">
+                    <div class="see-more-button mt-4 text-center wow fadeInUp">
                         <a href="{{ route('videoGallery') }}" class="view-all-btn">View All</a>
                     </div>
                 </div>                                        
@@ -226,10 +223,10 @@
                         <div>
                             <div class="col-12">
                                 <div class="spnsors-logo">
-                                    <img class="img-fluid" src="{{ asset('img/client/' . $index->image) }}" alt="{{  $index->image }}">
+                                    <img class="img-fluid" src="{{ asset('img/client/' . $index->image) }}" onerror="this.onerror=null; this.src='img/no.png'" alt="{{  $index->image }}">
                                 </div>
                                 <div class="sponsors-name">
-                                    <p>{{ $index->name }}</p>
+                                    <p style="font-weight: 600">{{ $index->name }}</p>
                                 </div>
                             </div>
                         </div>
@@ -240,7 +237,7 @@
         </div>
     </section>
 
-    <section class="contact section-padding">
+    <section id="info-overall" class="contact section-padding">
         <div class="container">
             <div class="row">
                 <div class="col-sm-4">
@@ -261,9 +258,9 @@
                             <h3>Queries</h3>
                             <p>
                                 <!-- <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="eb838e878784ab84858e9d8e859fc5888486">[email&#160;protected]</a> -->
-                                <a href="mailto:{{ $setting->email }}">{{ $setting->email  }}</a>
+                                <a class="mail" href="mailto:{{ $setting->email }}">{{ $setting->email  }}</a>
                             </p>
-                            <p>{{ $setting->tele_phone }}</p>
+                            <a href="tel: {{ $setting->tele_phone }}" class="phone">{{ $setting->tele_phone }}</a>
                         </div>
                     </div>
                 </div>

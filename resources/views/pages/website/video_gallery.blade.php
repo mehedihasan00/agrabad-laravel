@@ -1,4 +1,5 @@
 @extends('layouts.master_home')
+@section('title', 'Video Gallery')
 @section('web_content')
 <section id="video-gallery" class="section-padding text-center">
     <div class="container">

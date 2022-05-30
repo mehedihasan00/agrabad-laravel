@@ -11976,3 +11976,11 @@ body {
   /* display: block; */
   vertical-align: middle;
 }
+.message-modal-header {
+  background: #0f87f1;
+  color: #fff;
+  padding: 0.5rem 0.5rem;
+}
+.message-modal-footer {
+  padding: 0.2rem 0.5rem;
+}

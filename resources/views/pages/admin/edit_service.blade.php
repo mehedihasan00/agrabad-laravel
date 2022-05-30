@@ -12,7 +12,7 @@
                 @csrf
                 <div class="card">
                     <div class="card-header card-mod-back">
-                        <h5 class="add-slider">Update Services+</h4>
+                        <h5 class="add-slider">Update Service</h4>
                     </div>
                     <div class="card-body b-card-body bg-light rounded px-2 px-md-3 py-1 py-md-1" style="font-size: 0.9rem">
                         <!-- <hr style="margin-top: 0.5rem; margin-bottom: 0.3rem; opacity: 0.1"> -->

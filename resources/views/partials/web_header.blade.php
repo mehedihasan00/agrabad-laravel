@@ -45,7 +45,7 @@
             <div class="collapse navbar-collapse" id="main-navbar">
                 <ul class="navbar-nav mr-auto w-100 justify-content-end">
                     <li class="nav-item {{ (request()->is('/')) ? 'active' : '' }}">
-                        <a class="nav-link" href="{{ route('home') }}/#slider">
+                        <a class="nav-link" href="{{ route('home') }}">
                             Home
                         </a>
                     </li>

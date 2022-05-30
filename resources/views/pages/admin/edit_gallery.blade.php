@@ -30,7 +30,7 @@
                         <hr style="margin-top: 0.5rem; margin-bottom: 0.3rem; opacity: 0.1">
                         <div class="col-12 d-flex justify-content-between">
                             <a href="{{ url('admin/gallery') }}" class="btn btn-primary btn-sm">Prev</a>
-                            <button type="submit" class="btn btn-mod-content-submit btn-sm">Update Photo+</button>
+                            <button type="submit" class="btn btn-mod-content-submit btn-sm">Update Photo</button>
                         </div>
                     </div>
                 </div>           

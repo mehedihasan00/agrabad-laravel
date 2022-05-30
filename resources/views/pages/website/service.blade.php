@@ -1,4 +1,5 @@
 @extends('layouts.master_home')
+@section('title', 'Service')
 @section('web_content')
 <section id="service-detail" class="section-padding">
         <div class="container">
@@ -12,10 +13,10 @@
             </div>
             <div class="row">
                 @foreach ($service as $item)
-                <div class="col-lg-4 col-sm-6 col-xa-12 mb-3">
+                <div class="col-lg-4 col-md-6 col-sm-12 col-xa-12 mb-3">
                     <div class="service-block-wrapper text-center wow fadeInLeft" data-wow-delay="0.2s">
                        <div class="image-box">
-                           <img src="{{ asset('img/service/'.$item->image) }}" class="service-img" alt="" srcset="">
+                           <img src="{{ asset('img/service/'.$item->image) }}" class="service-img" onerror="this.onerror=null; this.src='img/no.png'" alt="" srcset="">
                            <span class="image-overlay"></span>
                        </div>
                        <div class="service-title">

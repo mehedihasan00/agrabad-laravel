@@ -75,8 +75,6 @@ class sliderController extends Controller
 
             $image = $request->file('image');
             if($image) {
-                // $imageName = date('YmdHi').$image->getClientOriginalName();
-                // $image->move('img/slider/', $imageName);
                 $nameGen = hexdec(uniqid());
                 $imgExt = strtolower($image->getClientOriginalExtension());
                 $imgName = $nameGen. '.' . $imgExt;
@@ -93,7 +91,7 @@ class sliderController extends Controller
         } catch (\Exception $e) {
             DB::rollback();           
 		    // return ["error" => $e->getMessage()];
-            // return redirect()->back()->with('error', 'Slider update failed!');
+            return redirect()->back()->with('error', 'Slider update failed!');
         }
     }
     public function sliderDelete($id) {
