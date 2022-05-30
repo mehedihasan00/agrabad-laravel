@@ -51,7 +51,7 @@
     <div class="footer-bottom">
         @php $currentURL = Request::url(); @endphp
         <div class="container footer-box clearfix">
-            <div class="copyright wow fadeInLeft" data-wow-delay="0.2s">&copy; Copyright <strong><a href="{{ $currentURL }}/" target="_blank">{{ $currentURL }}</a></strong> All Rights Reserved</div>
+            <div class="copyright wow fadeInLeft" data-wow-delay="0.2s">&copy; Copyright <span>@php echo(date("Y",time())); @endphp</span>, All Rights Reserved <strong><a href="#" target="_blank">{{ $setting->company_name }}</a></strong> </div>
             <div class="credit wow fadeInRight" data-wow-delay="0.2s">Designed & Developed By <a href="http://linktechbd.com/" class="highlights" target="_blank">Link Up Technology</a></div>
         </div>
     </div>
