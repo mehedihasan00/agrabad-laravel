@@ -1,9 +1,9 @@
 /* only small desktops */
 @media (min-width: 992px) and (max-width: 1199px) {
-    #main-slide .carousel-caption {
-      /* top: 32%; */
-      /* min-width: 475px; */
-    }
+    /* #main-slide .carousel-caption {
+      top: 32%;
+      min-width: 475px;
+    } */
     .carousel-indicators {
       display: none;
     }
@@ -32,10 +32,10 @@
   
   /* tablets */
   @media (max-width: 991px) {
-    #main-slide .carousel-caption {
-      /* top: 32%; */
-      /* min-width: 370px; */
-    }
+    /* #main-slide .carousel-caption {
+      top: 32%;
+      min-width: 370px;
+    } */
     .carousel-indicators {
       display: none;
     }
@@ -59,9 +59,9 @@
   
   /* only small tablets */
   @media (min-width: 768px) and (max-width: 991px) {
-    #main-slide .carousel-caption {
-      /* top: 32%; */
-    }
+    /* #main-slide .carousel-caption {
+      top: 32%;
+    } */
     .carousel-indicators {
       display: none;
     }
@@ -91,10 +91,10 @@
     .section-sub {
       font-size: 16px;
     }
-    #main-slide .carousel-caption {
-      /* top: 22%; */
-      /* min-width: 260px; */
-    }
+    /* #main-slide .carousel-caption {
+      top: 22%;
+      min-width: 260px;
+    } */
     .carousel-indicators {
       display: none;
     }

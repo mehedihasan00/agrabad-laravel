@@ -2103,9 +2103,9 @@ a.back-to-top:hover, a.back-to-top:focus {
 #main-slide .carousel-caption p {
   padding: 5px;
 }
-#main-slide .carousel-caption .btn {
-  /* margin: 25px 25px 0px 0px; */
-}
+/* #main-slide .carousel-caption .btn {
+  margin: 25px 25px 0px 0px;
+} */
 
 #main-slide .carousel-control-next,
 #main-slide .carousel-control-prev {
