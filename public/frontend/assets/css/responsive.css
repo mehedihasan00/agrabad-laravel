@@ -8,7 +8,7 @@
       display: none;
     }
     #main-slide .carousel-item .carousel-caption .heading {
-      font-size: 20px;
+      font-size: 26px;
     }
     #main-slide .carousel-item .carousel-caption p {
       font-size: 13px;
@@ -66,10 +66,11 @@
       display: none;
     }
     #main-slide .carousel-item .carousel-caption .heading {
-      font-size: 20px;
+      font-size: 22px;
     }
     #main-slide .carousel-item .carousel-caption p {
       font-size: 13px;
+      line-height: 16px;
     }
     .countdown-timer .heading-count h2 {
       font-size: 25px;
@@ -98,10 +99,11 @@
       display: none;
     }
     #main-slide .carousel-item .carousel-caption .heading {
-      font-size: 13px;
+      font-size: 15px;
     }
     #main-slide .carousel-item .carousel-caption p {
-      font-size: 13px;
+      font-size: 12px;
+      line-height: 14px;
     }
     #hero-area .contents {
       padding: 100px 0;
@@ -160,11 +162,27 @@
     .thumb-left img {
       width: 60%;
     }
+    .btn {
+      padding: 5px 8px;
+      font-size: 12px;
+    }
+    #about-detail .title-sub {
+      font-size: 26px;
+    }
+    #service-detail .service-block-wrapper .service-img {
+      height: auto;
+    }
+    #service .service-block-wrapper .service-img {
+      height: auto;
+    }
   }
   
   @media (min-width: 320px) and (max-width: 480px) {
     #main-slide .carousel-item .carousel-caption .heading {
+      font-size: 13px;
       letter-spacing: 0;
+      padding-right: 1px;
+      padding-left: 1px;
     }
     #main-slide .carousel-item .carousel-caption p {
       display: none;
@@ -202,5 +220,11 @@
     }
     .img-single-service {
       height: 13rem ;
+    }
+    #service-detail .service-block-wrapper .service-img {
+      height: auto;
+    }
+    #service .service-block-wrapper .service-img {
+      height: auto;
     }
   }

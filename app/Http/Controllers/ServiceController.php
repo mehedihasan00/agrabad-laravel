@@ -9,7 +9,7 @@ use DB;
 class ServiceController extends Controller
 {
     public function service() {
-        $services = Service::latest()->paginate(5);
+        $services = Service::latest()->get();
         return view('pages.admin.service', compact('services'));
     }
     public function serviceInsert(Request $request) {

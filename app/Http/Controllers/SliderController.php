@@ -11,7 +11,7 @@ use Image;
 class sliderController extends Controller
 {
     public function slider() {
-        $sliders = Slider::latest()->paginate(5);
+        $sliders = Slider::latest()->get();
         return view('pages.admin.slider', compact('sliders'));
     }
     public function sliderInsert(Request $request) {

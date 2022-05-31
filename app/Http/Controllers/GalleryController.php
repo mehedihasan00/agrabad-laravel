@@ -5,6 +5,7 @@ use Illuminate\Support\Carbon;
 use Illuminate\Http\Request;
 use App\Models\Gallery;
 use DB;
+use Image;
 
 class GalleryController extends Controller
 {
@@ -22,7 +23,8 @@ class GalleryController extends Controller
         $imgExt = strtolower($image->getClientOriginalExtension());
         $imgName = $nameGen. '.' . $imgExt;
         $upLocation = 'img/gallery/';
-        $image->move($upLocation, $imgName);
+        // $image->move($upLocation, $imgName);
+        Image::make($image)->resize(720,480)->save($upLocation . $imgName);
 
         try {
             DB::beginTransaction();
@@ -56,7 +58,8 @@ class GalleryController extends Controller
             $image = $request->file('image');
             if($image) {
                 $imageName = date('YmdHi').$image->getClientOriginalName();
-                $image->move('img/gallery', $imageName);
+                // $image->move('img/gallery', $imageName);
+                Image::make($image)->resize(720,480)->save('img/gallery/' . $imageName);
                 if(file_exists('img/gallery/'. $gallery->image) && !empty($gallery->image)) {
                     unlink('img/gallery/' . $gallery->image);
                 }
@@ -67,8 +70,8 @@ class GalleryController extends Controller
             return Redirect()->back()->with("success", "Update Successfull");
         } catch(\Exception $e) {
             DB::rollback();         
-		    return ["error" => $e->getMessage()];
-            // return redirect()->back()->with('error', 'Team insert failed!');
+		    // return ["error" => $e->getMessage()];
+            return redirect()->back()->with('error', 'Team insert failed!');
         }
     }
     public function galleryDelete($id) {

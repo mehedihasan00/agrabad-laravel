@@ -9,7 +9,7 @@ use DB;
 class TeamController extends Controller
 {
     public function team() {
-        $teams = Team::latest()->paginate(5);
+        $teams = Team::latest()->get();
         // $teams = Team::orderBy('id', 'desc')->limit('5')->get();
         return view('pages.admin.team', compact('teams'));
     }

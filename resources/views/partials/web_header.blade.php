@@ -1,17 +1,17 @@
 <div id="topbar" class="topbar">
     <div class="container">
-        <div class="nav-box d-flex justify-content-md-between">
+        <div class="nav-box d-flex justify-content-between">
             <div class="address text-center">
                 <span class="phone">
                     <i class="fal fa-phone-alt"></i>
-                    {{ $setting->phone }}
+                    <a href="tel: {{ $setting->phone }}" style="color: inherit">{{ $setting->phone }}</a>
                 </span>
                 <!-- <span class="text">
                     <i class="fal fa-map-marker-alt"></i>
                     <span>{{ $setting->phone }}</span>
                 </span> -->
             </div>
-            <div class="icon d-none d-md-block">
+            <div class="icon">
                 <a href="{{ $setting->facebook_link }}" target="_blank" rel="noopener noreferrer">
                     <i class="fab fa-facebook-f"></i>
                 </a>

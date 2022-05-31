@@ -19,7 +19,7 @@
                 @foreach($sliders as $slider)
                 @if($count == 0)
                 <div class="carousel-item active">
-                    <img class="d-block w-100 slider{{ $count++ }}" src="{{ asset('img/slider/'. $slider->image) }}" alt="First slide">
+                    <img class="d-block w-100 slider{{ $count++ }}" src="{{ asset('img/slider/'. $slider->image) }}" alt="First slide" loading="lazy">
                     <div class="carousel-caption d-md-block">
                         <h3 class="wow fadeInDown heading" data-wow-delay=".4s">{{ $slider->title }}</h3>
                         <p class="fadeInUp wow" data-wow-delay=".6s"> {{ $slider->caption }}</p>
@@ -29,7 +29,7 @@
                 </div>
                 @else
                 <div class="carousel-item">
-                <img class="d-block w-100 slider{{ $count++ }}" src="{{ asset('img/slider/'. $slider->image) }}" alt="First slide">
+                <img class="d-block w-100 slider{{ $count++ }}" src="{{ asset('img/slider/'. $slider->image) }}" alt="First slide" loading="lazy">
                     <div class="carousel-caption d-md-block">
                         <h3 class="wow fadeInDown heading" data-wow-delay=".4s">{{ $slider->title }}</h3>
                         <p class="fadeInUp wow" data-wow-delay=".6s"> {{ $slider->caption }}</p>
@@ -83,8 +83,8 @@
                 </div>
             </div>
             <div class="row">
-                @foreach ($service as $item)
-                <div class="col-lg-4 col-sm-6 col-xa-12 mb-3">
+                @foreach ($service->take(6) as $item)
+                <div class="col-lg-4 col-md-6 col-sm-12 col-xa-12 mb-3">
                     <div class="service-block-wrapper text-center wow fadeInLeft" data-wow-delay="0.2s">
                        <div class="image-box">
                            <img src="{{ asset('img/service/'.$item->image) }}" class="service-img" onerror="this.onerror=null; this.src='img/no.png'" alt="" srcset="">
@@ -100,7 +100,9 @@
                 @endforeach
                 <div class="col-12">
                     <div class="see-more-button mt-4 text-center wow fadeInUp" data-wow-delay="0.2s">
+                        @if( ($service->count()) > 6 )
                         <a href="{{ route('service') }}" class="view-all-btn">View All</a>
+                        @endif
                     </div>
                 </div>
             </div>
@@ -118,11 +120,11 @@
                 </div>
             </div>
             <div class="row">
-                @foreach($management as $item)
+                @foreach($management->take(8) as $item)
                 <div class="col-sm-6 col-md-6 col-lg-3">
                     <div class="team-item text-center wow fadeInUp" data-wow-delay="0.2s">
                         <div class="team-img">
-                            <img class="img-fluid" src="{{ asset('img/management/' . $item->image) }}" onerror="this.onerror=null; this.src='img/no.png'" alt="">
+                            <img class="img-fluid team-image" src="{{ asset('img/management/' . $item->image) }}" onerror="this.onerror=null; this.src='img/no.png'" alt="">
                             <div class="team-overlay">
                                 <div class="overlay-social-icon text-center">
                                     <ul class="social-icons">
@@ -142,7 +144,9 @@
                 @endforeach
                 <div class="col-12">
                     <div class="see-more-button mt-4 text-center wow fadeInUp" data-wow-delay="0.2s">
+                        @if( ($management->count()) > 8)
                         <a href="{{ route('team') }}" class="view-all-btn">View All</a>
+                        @endif
                     </div>
                 </div>
             </div>
@@ -160,8 +164,8 @@
             </div>
             <div class="row no-gutters">
                 @php $count=1 @endphp
-                @foreach($galleries as $gallery)
-                <div class="col-sm-6 col-md-6 col-lg-3">
+                @foreach($galleries->take(12) as $gallery)
+                <div class="col-sm-6 col-md-6 col-lg-3 mb-3 mb-sm-0">
                     <div class="card wow fadeInUp" data-wow-delay="0.2s">
                         <img class="card-img-top" src="{{ asset('img/gallery/'. $gallery->image) }}" onerror="this.onerror=null; this.src='img/no.png'" alt="Card image cap">
                         <div class="image-black-cover">
@@ -174,7 +178,9 @@
                 @endforeach
                 <div class="col-12">
                     <div class="see-more-button mt-4 text-center wow fadeInUp" data-wow-delay="0.2s">
+                        @if( ($galleries->count()) > 12 )
                         <a href="{{ route('gallery') }}" class="view-all-btn">View All</a>
+                        @endif
                     </div>
                 </div>
             </div>
@@ -191,7 +197,7 @@
                 </div>
             </div>
             <div class="row">
-                @foreach($videos as $video)
+                @foreach($videos->take(3) as $video)
                 <div class="col-sm-12 col-md-6 col-lg-4">
                     <div class="video-item wow fadeInUp" data-wow-delay="0.2s" data-wow-delay="0.2s">
                         <iframe width="100%" height="196" src="{{ $video->link }}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> 
@@ -200,7 +206,9 @@
                 @endforeach
                 <div class="col-12">
                     <div class="see-more-button mt-4 text-center wow fadeInUp">
+                        @if( ($videos->count()) > 3 )
                         <a href="{{ route('videoGallery') }}" class="view-all-btn">View All</a>
+                        @endif
                     </div>
                 </div>                                        
             </div>

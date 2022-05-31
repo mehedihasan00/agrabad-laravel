@@ -35,11 +35,11 @@
     @include('partials/web_fixed')
     <script src="{{ asset('frontend/assets/js/jquery-min.js') }}"></script>
     <script>
-        $(document).ready(function(){
-            $('.carousel').carousel({
-                interval: false
-            })
-        });
+        // $(document).ready(function(){
+        //     $('.carousel').carousel({
+        //         interval: false
+        //     })
+        // });
     </script>
     <script src="{{ asset('frontend/assets/js/popper.min.js') }}"></script>
     <script src="{{ asset('frontend/assets/js/bootstrap.min.js') }}"></script>
